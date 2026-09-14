@@ -1,0 +1,463 @@
+//Puedes utilizar este diseño para darle una apariencia más profesional a AutoCare Pro.
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050505,
+            #101820,
+            #162b3f
+        );
+
+    min-height: 100vh;
+
+    color: white;
+
+}
+
+
+/* =====================================
+   LOGIN
+===================================== */
+
+.login-container {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+
+.logo {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.logo h1 {
+
+    font-size: 42px;
+
+    letter-spacing: 4px;
+
+    color: #ffffff;
+
+}
+
+
+.logo span {
+
+    color: #2196f3;
+
+}
+
+
+.logo p {
+
+    color: #bbbbbb;
+
+    margin-top: 5px;
+
+}
+
+
+.login-box {
+
+    width: 400px;
+
+    max-width: 95%;
+
+    background: rgba(255,255,255,0.08);
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.5);
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+.login-box h2 {
+
+    text-align: center;
+
+    margin-bottom: 10px;
+
+}
+
+
+.descripcion {
+
+    text-align: center;
+
+    color: #bbb;
+
+    margin-bottom: 25px;
+
+}
+
+
+label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border-radius: 7px;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+
+.btn-login {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #1476d4;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.btn-login:hover {
+
+    background: #0b5ead;
+
+}
+
+
+.recuperar {
+
+    display: block;
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #5eb5ff;
+
+    text-decoration: none;
+
+}
+
+
+.recuperar:hover {
+
+    text-decoration: underline;
+
+}
+
+
+.error {
+
+    background: rgba(255,0,0,0.15);
+
+    color: #ff4d4d;
+
+    padding: 12px;
+
+    margin-top: 15px;
+
+    border-radius: 7px;
+
+    text-align: center;
+
+}
+
+
+.exito {
+
+    background: rgba(0,255,100,0.15);
+
+    color: #35e87b;
+
+    padding: 12px;
+
+    margin-top: 15px;
+
+    border-radius: 7px;
+
+    text-align: center;
+
+}
+
+
+.intentos {
+
+    text-align: center;
+
+    color: #aaa;
+
+    margin-top: 15px;
+
+}
+
+
+.demo {
+
+    margin-top: 20px;
+
+    background: rgba(255,255,255,0.08);
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    color: #ddd;
+
+}
+
+
+.demo h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =====================================
+   TIENDA
+===================================== */
+
+.header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 40px;
+
+    background: #071522;
+
+}
+
+
+.header h1 {
+
+    color: #2196f3;
+
+}
+
+
+.usuario-menu {
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+
+}
+
+
+.usuario-menu button {
+
+    background: #d32f2f;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+
+.menu {
+
+    display: flex;
+
+    gap: 25px;
+
+    padding: 15px 40px;
+
+    background: #0c263d;
+
+    align-items: center;
+
+}
+
+
+.menu a {
+
+    color: white;
+
+    text-decoration: none;
+
+}
+
+
+.menu span {
+
+    margin-left: auto;
+
+}
+
+
+.bienvenida {
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+}
+
+
+.bienvenida h2 {
+
+    font-size: 32px;
+
+    color: #2196f3;
+
+}
+
+
+.bienvenida p {
+
+    margin-top: 10px;
+
+    color: #ccc;
+
+}
+
+
+.productos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    padding: 30px 50px;
+
+}
+
+
+.producto {
+
+    background: white;
+
+    color: #222;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.3);
+
+}
+
+
+.producto h3 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.producto p {
+
+    color: #666;
+
+    margin-bottom: 15px;
+
+}
+
+
+.producto h4 {
+
+    font-size: 22px;
+
+    margin-bottom: 20px;
+
+    color: #1476d4;
+
+}
+
+
+.producto button {
+
+    padding: 11px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #1476d4;
+
+    color: white;
+
+    cursor: pointer;
+
+}
