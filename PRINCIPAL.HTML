@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoCare Pro - Repuestos y Accesorios Automotrices</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
+}
+
+/* HEADER */
+
+header{
+    background:#111827;
+    color:white;
+    padding:15px;
+}
+
+.logo{
+    font-size:35px;
+    font-weight:bold;
+    color:#FFD700;
+}
+
+nav{
+    margin-top:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-right:20px;
+}
+
+nav a:hover{
+    color:#FFD700;
+}
+
+/* BANNER */
+
+.banner{
+    background:url('banner-autocare.jpg');
+    background-size:cover;
+    color:white;
+    text-align:center;
+    padding:80px;
+    background-color:#1f2937;
+}
+
+.banner h1{
+    font-size:45px;
+}
+
+.banner p{
+    font-size:20px;
+}
+
+/* BUSCADOR */
+
+.buscador{
+    text-align:center;
+    padding:30px;
+    background:white;
+}
+
+.buscador input{
+    width:60%;
+    padding:12px;
+}
+
+.buscador button{
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+}
+
+/* CATEGORIAS */
+
+.categorias{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+    box-shadow:0px 0px 10px #ccc;
+}
+
+/* PRODUCTOS */
+
+.productos{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    padding:30px;
+}
+
+.producto{
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:10px;
+}
+
+.producto button{
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:10px;
+}
+
+/* LOGIN */
+
+.login{
+    background:white;
+    padding:30px;
+    margin:20px;
+}
+
+.login input, .login select{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+}
+
+/* BLOG */
+
+.blog{
+    padding:30px;
+}
+
+.blog article{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+}
+
+/* USUARIOS */
+
+.usuarios{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding:30px;
+}
+
+.perfil{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+}
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🚗 AUTOCARE PRO
+</div>
+
+<nav>
+<a href="#">Inicio</a>
+<a href="#">Catálogo</a>
+<a href="#">Carrito</a>
+<a href="#">Blog</a>
+<a href="#">Contacto</a>
+<a href="#">Iniciar Sesión</a>
+</nav>
+
+</header>
+
+<section class="banner">
+
+<h1>Todo para tu Vehículo</h1>
+
+<p>
+Repuestos, Lubricantes, Limpieza Automotriz y Accesorios de Seguridad
+</p>
+
+</section>
+
+<section class="buscador">
+
+<h2>Buscar Productos</h2>
+
+<input type="text" placeholder="Buscar aceite, filtro, ampolleta...">
+
+<button>Buscar</button>
+
+</section>
+
+<section class="categorias">
+
+<div class="card">
+<h3>🛢 Aceites & Filtros</h3>
+</div>
+
+<div class="card">
+<h3>🧽 Detailing & Limpieza</h3>
+</div>
+
+<div class="card">
+<h3>💡 Ampolletas & Electricidad</h3>
+</div>
+
+<div class="card">
+<h3>🚨 Accesorios</h3>
+</div>
+
+</section>
+
+<section class="productos">
+
+<div class="producto">
+<h3>Aceite Sintético 5W30</h3>
+<p>$29.990</p>
+<button>Agregar al Carrito</button>
+</div>
+
+<div class="producto">
+<h3>Filtro de Aceite</h3>
+<p>$8.990</p>
+<button>Agregar al Carrito</button>
+</div>
+
+<div class="producto">
+<h3>Kit Lavado Premium</h3>
+<p>$19.990</p>
+<button>Agregar al Carrito</button>
+</div>
+
+<div class="producto">
+<h3>Ampolleta LED H7</h3>
+<p>$14.990</p>
+<button>Agregar al Carrito</button>
+</div>
+
+</section>
+
+<section class="login">
+
+<h2>Inicio de Sesión</h2>
+
+<form>
+
+<input type="email" placeholder="Correo Electrónico">
+
+<input type="password" placeholder="Contraseña">
+
+<select>
+
+<option>Cliente Web</option>
+
+<option>Vendedor</option>
+
+<option>Administrador</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">
+Ingresar
+</button>
+
+</form>
+
+</section>
+
+<section class="usuarios">
+
+<div class="perfil">
+
+<h2>👤 Cliente Web</h2>
+
+<ul>
+<li>Comprar productos</li>
+<li>Gestionar carrito</li>
+<li>Ver historial de compras</li>
+<li>Leer blogs</li>
+</ul>
+
+</div>
+
+<div class="perfil">
+
+<h2>🧑‍💼 Vendedor</h2>
+
+<ul>
+<li>Ver productos</li>
+<li>Gestionar órdenes</li>
+<li>Consultar stock</li>
+<li>Acceso limitado</li>
+</ul>
+
+</div>
+
+<div class="perfil">
+
+<h2>👨‍💻 Administrador</h2>
+
+<ul>
+<li>Gestionar usuarios</li>
+<li>Gestionar productos</li>
+<li>Gestionar órdenes</li>
+<li>Gestionar stock</li>
+<li>Generar reportes</li>
+<li>Control total del sistema</li>
+</ul>
+
+</div>
+
+</section>
+
+<section class="blog">
+
+<h1>Blog y Noticias</h1>
+
+<article>
+
+<h2>
+¿Cada cuántos kilómetros debes cambiar el aceite del motor?
+</h2>
+
+<p>
+El cambio de aceite es fundamental para mantener el rendimiento
+del motor. Generalmente se recomienda entre 5.000 y 10.000 km,
+dependiendo del fabricante y del tipo de aceite utilizado.
+</p>
+
+</article>
+
+<article>
+
+<h2>
+Cómo lavar tu auto sin dañar la pintura: Guía paso a paso
+</h2>
+
+<p>
+Utiliza productos especializados, esponjas suaves y realiza
+el lavado a la sombra para evitar daños en la pintura y
+prolongar el brillo del vehículo.
+</p>
+
+</article>
+
+</section>
+
+<section class="carrito" style="padding:30px; background:white;">
+
+<h2>🛒 Carrito de Compras</h2>
+
+<table border="1" width="100%">
+
+<tr>
+<th>Producto</th>
+<th>Cantidad</th>
+<th>Precio</th>
+</tr>
+
+<tr>
+<td>Aceite Sintético 5W30</td>
+<td>1</td>
+<td>$29.990</td>
+</tr>
+
+<tr>
+<td colspan="2"><b>Total</b></td>
+<td><b>$29.990</b></td>
+</tr>
+
+</table>
+
+<br>
+
+<button>
+Finalizar Compra
+</button>
+
+</section>
+
+<footer>
+
+<h3>AUTOCARE PRO</h3>
+
+<p>Repuestos y Accesorios Automotrices</p>
+
+<p>📞 +56 9 5760 6659</p>
+<p>📞 +56 9 4903 3215</p>
+<p>📞 +56 9 7909 1639</p>
+
+<p>🌐 www.autocarepro.cl</p>
+
+<p>© 2026 Todos los derechos reservados</p>
+
+</footer>
+
+</body>
+</html>

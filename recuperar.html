@@ -1,0 +1,271 @@
+// 4. recuperar.html //
+// #                 //  
+// # Esta página permite recuperar la contraseña según el método de identificación. //
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Recuperar contraseña - AutoCare Pro</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="logo">
+
+        <h1>AUTOCARE <span>PRO</span></h1>
+
+        <p>Recuperación de contraseña</p>
+
+    </div>
+
+
+    <div class="login-box">
+
+        <h2>Recuperar contraseña</h2>
+
+        <p class="descripcion">
+            Selecciona cómo deseas identificar tu cuenta.
+        </p>
+
+
+        <label for="tipoRecuperacion">
+            Método
+        </label>
+
+        <select id="tipoRecuperacion">
+
+            <option value="correo">
+                Correo electrónico
+            </option>
+
+            <option value="rut">
+                RUT
+            </option>
+
+        </select>
+
+
+        <label id="labelIdentificacion"
+               for="identificacion">
+
+            Correo electrónico
+
+        </label>
+
+
+        <input
+            type="text"
+            id="identificacion"
+            placeholder="correo@ejemplo.cl"
+        >
+
+
+        <button
+            class="btn-login"
+            onclick="recuperarPassword()">
+
+            RECUPERAR CONTRASEÑA
+
+        </button>
+
+
+        <div id="mensajeRecuperacion"></div>
+
+
+        <br>
+
+        <a href="index.html" class="recuperar">
+            Volver al inicio de sesión
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const usuarios = [
+
+    {
+        rut: "12.345.678-5",
+        correo: "cliente@autocarepro.cl",
+        celular: "+56912345678",
+        password: "Auto123"
+    },
+
+    {
+        rut: "11.111.111-1",
+        correo: "vendedor@autocarepro.cl",
+        celular: "+56998765432",
+        password: "Venta123"
+    },
+
+    {
+        rut: "9.999.999-9",
+        correo: "admin@autocarepro.cl",
+        celular: "+56987654321",
+        password: "Admin123"
+    }
+
+];
+
+
+// ======================================
+// CAMBIAR MÉTODO DE RECUPERACIÓN
+// ======================================
+
+document
+.getElementById("tipoRecuperacion")
+.addEventListener("change", function() {
+
+    const tipo = this.value;
+
+    const label =
+        document.getElementById("labelIdentificacion");
+
+    const input =
+        document.getElementById("identificacion");
+
+
+    if (tipo === "correo") {
+
+        label.textContent =
+            "Correo electrónico";
+
+        input.placeholder =
+            "correo@ejemplo.cl";
+
+    }
+    else {
+
+        label.textContent =
+            "RUT";
+
+        input.placeholder =
+            "12.345.678-5";
+
+    }
+
+});
+
+
+// ======================================
+// RECUPERAR CONTRASEÑA
+// ======================================
+
+function recuperarPassword() {
+
+    const tipo =
+        document.getElementById("tipoRecuperacion").value;
+
+    const identificacion =
+        document.getElementById("identificacion")
+        .value
+        .trim();
+
+    const mensaje =
+        document.getElementById("mensajeRecuperacion");
+
+
+    if (identificacion === "") {
+
+        mensaje.textContent =
+            "Debe ingresar la información solicitada.";
+
+        mensaje.className = "error";
+
+        return;
+
+    }
+
+
+    // ==================================
+    // RECUPERACIÓN POR CORREO
+    // ==================================
+ 
+    if (tipo === "correo") {
+
+        const usuario = usuarios.find(
+
+            u =>
+            u.correo.toLowerCase() ===
+            identificacion.toLowerCase()
+
+        );
+
+
+        if (!usuario) {
+
+            mensaje.textContent =
+                "El correo no se encuentra registrado.";
+
+            mensaje.className = "error";
+
+            return;
+
+        }
+
+
+        mensaje.textContent =
+            "Se ha enviado un enlace de recuperación al correo: " +
+            usuario.correo;
+
+        mensaje.className = "exito";
+
+    }
+
+
+    // ==================================
+    // RECUPERACIÓN POR RUT
+    // ==================================
+
+    else {
+
+        const usuario = usuarios.find(
+
+            u =>
+            u.rut.replace(/[.-]/g, "").toUpperCase() ===
+            identificacion.replace(/[.-]/g, "").toUpperCase()
+
+        );
+
+
+        if (!usuario) {
+
+            mensaje.textContent =
+                "El RUT no se encuentra registrado.";
+
+            mensaje.className = "error";
+
+            return;
+
+        }
+
+
+        mensaje.textContent =
+            "Se enviará un código de recuperación al celular registrado: " +
+            usuario.celular;
+
+        mensaje.className = "exito";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

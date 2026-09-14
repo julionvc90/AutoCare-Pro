@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AutoCare Pro - Tienda</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+    <div>
+
+        <h1>AUTOCARE PRO</h1>
+
+        <p>Repuestos y Accesorios Automotrices</p>
+
+    </div>
+
+
+    <div class="usuario-menu">
+
+        <span id="bienvenida"></span>
+
+        <button onclick="cerrarSesion()">
+            Cerrar sesión
+        </button>
+
+    </div>
+
+</header>
+
+
+<nav class="menu">
+
+    <a href="#">Inicio</a>
+
+    <a href="#">Aceites & Filtros</a>
+
+    <a href="#">Detailing</a>
+
+    <a href="#">Ampolletas</a>
+
+    <a href="#">Accesorios</a>
+
+    <a href="#">Blog</a>
+
+    <span>
+        🛒 Carrito:
+        <strong id="cantidadCarrito">0</strong>
+    </span>
+
+</nav>
+
+
+<main>
+
+    <section class="bienvenida">
+
+        <h2>Bienvenido a AutoCare Pro</h2>
+
+        <p>
+            Encuentra repuestos, lubricantes y accesorios
+            para mantener tu vehículo en perfectas condiciones.
+        </p>
+
+    </section>
+
+
+    <section class="productos">
+
+        <div class="producto">
+
+            <h3>Aceite Motor 5W-30</h3>
+
+            <p>Lubricante sintético 4 litros</p>
+
+            <h4>$39.990</h4>
+
+            <button onclick="agregarCarrito()">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+
+        <div class="producto">
+
+            <h3>Kit de Limpieza</h3>
+
+            <p>Kit completo para detailing</p>
+
+            <h4>$24.990</h4>
+
+            <button onclick="agregarCarrito()">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+
+        <div class="producto">
+
+            <h3>Filtro de Aceite</h3>
+
+            <p>Filtro para mantenimiento preventivo</p>
+
+            <h4>$9.990</h4>
+
+            <button onclick="agregarCarrito()">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+
+        <div class="producto">
+
+            <h3>Kit Ampolletas LED</h3>
+
+            <p>Iluminación LED automotriz</p>
+
+            <h4>$29.990</h4>
+
+            <button onclick="agregarCarrito()">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script>
+
+
+// ==========================================
+// VERIFICAR SESIÓN
+// ==========================================
+
+const usuarioActivo =
+    JSON.parse(
+        localStorage.getItem("usuarioActivo")
+    );
+
+
+if (!usuarioActivo) {
+
+    window.location.href = "index.html";
+
+}
+else {
+
+    document.getElementById("bienvenida").textContent =
+        "Hola, " +
+        usuarioActivo.nombre +
+        " (" +
+        usuarioActivo.rol +
+        ")";
+
+}
+
+
+// ==========================================
+// CARRITO
+// ==========================================
+
+let carrito =
+    Number(localStorage.getItem("carrito")) || 0;
+
+
+document.getElementById("cantidadCarrito")
+    .textContent = carrito;
+
+
+function agregarCarrito() {
+
+    carrito++;
+
+    localStorage.setItem(
+        "carrito",
+        carrito
+    );
+
+    document.getElementById("cantidadCarrito")
+        .textContent = carrito;
+
+    alert(
+        "Producto agregado al carrito."
+    );
+
+}
+
+
+// ==========================================
+// CERRAR SESIÓN
+// ==========================================
+
+function cerrarSesion() {
+
+    localStorage.removeItem(
+        "usuarioActivo"
+    );
+
+    localStorage.removeItem(
+        "carrito"
+    );
+
+    window.location.href =
+        "index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>
