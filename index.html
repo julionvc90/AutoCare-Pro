@@ -1,0 +1,262 @@
+<!-- COPIAR EN TODAS LAS PAGINAS-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMG/technical_13191571.png" type="image/x-icon" sizes="32x32">  
+  <title>AutoCare Pro - Repuestos y Accesorios Automotrices</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/3d3d423e08.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="top-bar-actions">
+    <div class="container d-flex justify-content-end align-items-center gap-3">
+      <a href="Login.html" class="btn-top-login">
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
+        <span>Iniciar Sesión</span>
+      </a>
+
+      <button class="btn-top-cart" type="button" id="btnCarrito" aria-expanded="false" aria-controls="panelCarrito">
+        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+        <span>Carrito</span>
+        <span class="cart-badge" id="contadorCarrito">0</span>
+      </button>
+
+      <div class="cart-panel" id="panelCarrito" hidden>
+        <div class="cart-panel-header">
+          <h2 class="h6 mb-0">Productos en tu carrito</h2>
+          <button type="button" class="cart-close" id="cerrarCarrito" aria-label="Cerrar carrito">&times;</button>
+        </div>
+
+        <div id="listaCarrito" class="cart-list">
+          <p class="cart-empty mb-0">El carrito está vacío.</p>
+        </div>
+
+        <div class="cart-panel-footer">
+          <span>Total:</span>
+          <strong id="totalCarrito">$0</strong>
+        </div>
+
+        <a href="index.html" class="btn btn-success btn-sm w-100 mt-3">Ver carrito completo</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container">
+      <a class="brand-logo" href="index.html" aria-label="Ir al inicio de AutoCare Pro">
+        <img src="IMG/Logo.png" alt="AutoCare Pro" width="15%">
+        <span class="auto">AUTO</span>
+        <span class="care">CARE</span>
+        <span class="pro">Pro</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navTienda" aria-controls="navTienda" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navTienda">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link nav-link-custom active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="SobreNosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="Catalogo.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header-banner">
+    <img src="img/banner-mecanico.jpg" alt="Mecánico revisando un vehículo">
+    <div class="banner-overlay"></div>
+  </header>
+
+  <section class="container mt-5">
+    <div class="hero-search text-center">
+      <h1 class="fw-bold">Todo para el cuidado de tu vehículo</h1>
+      <p class="mb-4">Repuestos, lubricantes, productos de detailing y accesorios de seguridad</p>
+
+      <form class="d-flex justify-content-center" onsubmit="return false;">
+        <div class="input-group" style="max-width: 600px;">
+          <label class="visually-hidden" for="buscador">Buscar productos</label>
+          <input type="search" id="buscador" class="form-control form-control-lg" placeholder="Buscar repuestos, aceites, accesorios...">
+          <button class="btn btn-success" type="button" onclick="buscarProducto()">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            Buscar
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- COPIAR EN TODAS LAS PAGINAS-->
+  <section class="container mt-5" aria-label="Promociones destacadas">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <article class="banner-kit banner-kit-con-imagen">
+          <div class="banner-kit-texto">
+            <h2 class="h4 fw-bold mb-2">
+              <i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i>
+              Kit Detailing Completo
+            </h2>
+            <p class="mb-3">Shampoo, cera líquida y paños de microfibra en un solo pack.</p>
+            <span class="fw-bold fs-5">$19.990</span>
+          </div>
+          <div class="banner-kit-imagen">
+            <img src="img/kit-limpieza.jpg" alt="Kit de limpieza para detailing automotriz">
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6">
+        <article class="banner-kit alt banner-kit-con-imagen">
+          <div class="banner-kit-texto">
+            <h2 class="h4 fw-bold mb-2">
+              <i class="fa-solid fa-oil-can" aria-hidden="true"></i>
+              Kit Mantenimiento Preventivo
+            </h2>
+            <p class="mb-3">Aceite 5W-30, filtro de aceite y filtro de aire.</p>
+            <span class="fw-bold fs-5">$34.990</span>
+          </div>
+          <div class="banner-kit-imagen">
+            <img src="img/kit-mantenimiento.jpg" alt="Mantenimiento y cambio de aceite de vehículo">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="container seccion-espaciada" aria-labelledby="titulo-categorias">
+    <h2 id="titulo-categorias" class="titulo-seccion">Categorías</h2>
+
+    <div class="row g-4">
+      <div class="col-6 col-md-3">
+        <a href="productos.html?cat=aceites" class="categoria-box">
+          <i class="fa-solid fa-oil-can fa-2x mb-3" aria-hidden="true"></i>
+          <span>Aceites &amp; Filtros</span>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="productos.html?cat=detailing" class="categoria-box">
+          <i class="fa-solid fa-soap fa-2x mb-3" aria-hidden="true"></i>
+          <span>Detailing &amp; Limpieza</span>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="productos.html?cat=electricidad" class="categoria-box">
+          <i class="fa-solid fa-bolt fa-2x mb-3" aria-hidden="true"></i>
+          <span>Ampolletas &amp; Electricidad</span>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="productos.html?cat=accesorios" class="categoria-box">
+          <i class="fa-solid fa-car-side fa-2x mb-3" aria-hidden="true"></i>
+          <span>Accesorios</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos destacados -->
+  <section class="container seccion-espaciada" aria-labelledby="titulo-productos">
+    <h2 id="titulo-productos" class="titulo-seccion">Productos para mantenimiento preventivo</h2>
+
+    <div class="row g-4" id="contenedorProductos">
+      <div class="col-md-3">
+        <article class="card card-producto h-100">
+          <div class="card-producto-img">
+            <img src="img/aceite-5w30.jpg" alt="Aceite de motor 5W-30">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title h5">Aceite Motor 5W-30</h3>
+            <p class="card-text small mb-2">Sintético, 4 litros. Ideal cambios cada 5.000 km.</p>
+            <p class="precio">$24.990</p>
+            <button class="btn btn-sm btn-outline-success" type="button" onclick="agregarAlCarrito('Aceite Motor 5W-30', 24990)">Comprar</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-3">
+        <article class="card card-producto h-100">
+          <div class="card-producto-img">
+            <img src="img/filtro-aceite.jpg" alt="Filtro de aceite automotriz">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title h5">Filtro de Aceite</h3>
+            <p class="card-text small mb-2">Compatible con la mayoría de motores 1.6-2.0L.</p>
+            <p class="precio">$6.990</p>
+            <button class="btn btn-sm btn-outline-success" type="button" onclick="agregarAlCarrito('Filtro de Aceite', 6990)">Comprar</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-3">
+        <article class="card card-producto h-100">
+          <div class="card-producto-img">
+            <img src="img/filtro-aire.jpg" alt="Filtro de aire automotriz">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title h5">Filtro de Aire</h3>
+            <p class="card-text small mb-2">Mejora el rendimiento y ahorro de combustible.</p>
+            <p class="precio">$8.490</p>
+            <button class="btn btn-sm btn-outline-success" type="button" onclick="agregarAlCarrito('Filtro de Aire', 8490)">Comprar</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-3">
+        <article class="card card-producto h-100">
+          <div class="card-producto-img">
+            <img src="img/shampoo-cera.jpg" alt="Kit de shampoo y cera para auto">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title h5">Kit Shampoo + Cera</h3>
+            <p class="card-text small mb-2">Limpieza y protección de pintura sin dañarla.</p>
+            <p class="precio">$15.990</p>
+            <button class="btn btn-sm btn-outline-success" type="button" onclick="agregarAlCarrito('Kit Shampoo + Cera', 15990)">Comprar</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section class="container seccion-espaciada mb-5" aria-labelledby="titulo-blog">
+    <h2 id="titulo-blog" class="titulo-seccion">Blog / Noticias</h2>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <article class="card blog-card h-100">
+          <div class="card-body">
+            <h3 class="card-title h5">¿Cada cuántos kilómetros debes cambiar el aceite del motor?</h3>
+            <p class="card-text small mb-3">Te explicamos los intervalos recomendados según el tipo de aceite y uso del vehículo.</p>
+            <a href="blogs.html#blog1" class="btn btn-sm btn-outline-light">Leer más</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6">
+        <article class="card blog-card h-100">
+          <div class="card-body">
+            <h3 class="card-title h5">Cómo lavar tu auto sin dañar la pintura: Guía paso a paso</h3>
+            <p class="card-text small mb-3">Consejos de detailing profesional para un lavado seguro y efectivo.</p>
+            <a href="blogs.html#blog2" class="btn btn-sm btn-outline-light">Leer más</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center py-5 mt-5">
+    <img src="IMG/SobreNosotros.png" alt="Sobre Nosotros">
+    <p class="mb-0 small">© 2026 AutoCare Pro - Repuestos y Accesorios Automotrices</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

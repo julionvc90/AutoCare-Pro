@@ -1,0 +1,760 @@
+/* ============================================================
+   AUTOCARE PRO - HOJA DE ESTILOS
+   ============================================================ */
+
+/* 1. Variables y configuración base */
+:root {
+  --fondo: #10233d;
+  --fondo-nav: #1a3253;
+  --fondo-oscuro: #0c1829;
+  --panel: #234269;
+  --borde: #2b4a75;
+  --verde: #5fd3a3;
+  --rojo: #ff6b6b;
+  --texto: #e8edf4;
+  --texto-secundario: #c7d3e2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.container {
+  width: 100%;
+}
+
+/* 2. Barra superior y navegación */
+.top-bar-actions {
+  padding: 8px 0;
+  background-color: var(--fondo-oscuro);
+  border-bottom: 1px solid var(--fondo-nav);
+}
+
+.top-bar-actions > .container:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  position: relative;
+}
+
+.cart-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+}
+
+.navbar-custom {
+  padding: 12px 0;
+  background-color: var(--fondo-nav);
+  border-bottom: 1px solid var(--borde);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand-logo .auto { color: #fff; }
+.brand-logo .care { color: var(--rojo); font-style: italic; }
+.brand-logo .pro { color: var(--verde); font-style: italic; }
+
+.navbar-custom .navbar-nav {
+  gap: 4px;
+}
+
+.nav-link-custom {
+  display: inline-block;
+  padding: 5px 9px !important;
+  margin: 0;
+  border-radius: 6px;
+  color: var(--texto) !important;
+  font-size: .9rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color .2s, color .2s;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  background-color: var(--panel);
+  color: var(--verde) !important;
+}
+
+.btn-top-cart,
+.btn-top-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-top-cart {
+  position: relative;
+  background-color: var(--fondo-nav);
+  border: 1px solid var(--borde);
+  color: var(--verde);
+}
+
+.btn-top-cart:hover {
+  background-color: var(--panel);
+  border-color: var(--verde);
+  color: #fff;
+}
+
+.btn-top-login {
+  background-color: transparent;
+  border: 1px solid var(--verde);
+  color: var(--verde);
+}
+
+.btn-top-login:hover {
+  background-color: var(--verde);
+  color: #0d1b2a;
+}
+
+.cart-badge {
+  padding: 2px 6px;
+  border-radius: 50%;
+  background-color: var(--rojo);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: bold;
+}
+
+/* 3. Panel desplegable del carrito */
+.cart-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1050;
+  width: min(380px, calc(100vw - 30px));
+  margin: 0;
+  padding: 18px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background-color: var(--fondo-nav);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
+}
+
+.cart-panel[hidden] {
+  display: none;
+}
+
+.cart-panel-header,
+.cart-panel-footer,
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cart-panel-header {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.cart-panel-header h2 {
+  color: #fff;
+}
+
+.cart-close {
+  border: 0;
+  background: transparent;
+  color: var(--texto-secundario);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.cart-close:hover {
+  color: #fff;
+}
+
+.cart-list {
+  max-height: 230px;
+  overflow-y: auto;
+}
+
+.cart-item {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(43, 74, 117, .65);
+}
+
+.cart-item div {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.cart-item strong {
+  color: #fff;
+  font-size: .9rem;
+}
+
+.cart-item small,
+.cart-empty {
+  color: var(--texto-secundario);
+}
+
+.cart-item > span {
+  flex-shrink: 0;
+  color: var(--verde);
+  font-weight: bold;
+}
+
+.cart-panel-footer {
+  padding-top: 14px;
+  color: var(--texto-secundario);
+}
+
+.cart-panel-footer strong {
+  color: var(--verde);
+  font-size: 1.1rem;
+}
+
+/* 4. Títulos y separación general */
+.seccion-espaciada {
+  width: 100%;
+  margin-top: 5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.titulo-seccion {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 auto 2.5rem !important;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .5px;
+  text-align: center !important;
+}
+
+/* 5. Encabezados de páginas secundarias */
+.page-header {
+  padding: 42px 24px;
+  border: 1px solid var(--borde);
+  border-radius: 24px;
+  background: linear-gradient(135deg, #1c3f66, #152e4f);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+}
+
+.page-header-content {
+  text-align: center;
+}
+
+.page-header-icon {
+  margin-bottom: 18px;
+  color: var(--verde);
+  font-size: 3rem;
+}
+
+.page-header .titulo-seccion {
+  margin-bottom: 10px !important;
+}
+
+.page-header-subtitle {
+  margin: 0;
+  color: var(--texto-secundario);
+  font-size: 1.05rem;
+}
+
+/* 6. Banner principal del Home */
+.header-banner {
+  position: relative;
+  width: 100%;
+  height: clamp(220px, 28vw, 340px);
+  overflow: hidden;
+  background-color: var(--fondo);
+}
+
+.header-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.header-banner .banner-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(16, 35, 61, .1) 0%, rgba(16, 35, 61, .3) 50%, var(--fondo) 100%);
+}
+
+/* 7. Buscador destacado */
+.hero-search {
+  padding: clamp(28px, 4vw, 45px) clamp(18px, 3vw, 25px);
+  border-radius: 24px;
+  background: linear-gradient(135deg, #1c3f66, var(--fondo));
+}
+
+.hero-search h1 {
+  margin-bottom: 12px;
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.hero-search p {
+  color: var(--texto-secundario);
+}
+
+.hero-search .form-control {
+  border-radius: 12px 0 0 12px !important;
+}
+
+.hero-search .btn {
+  border-radius: 0 12px 12px 0 !important;
+}
+
+/* 8. Banners promocionales */
+.banner-kit {
+  padding: clamp(18px, 2vw, 26px);
+  border-radius: 20px;
+  color: #0d1b2a;
+}
+
+.banner-kit.alt {
+  color: #5a1a1a;
+}
+
+.banner-kit-con-imagen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 2vw, 22px);
+  min-height: 210px;
+  overflow: hidden;
+}
+
+.banner-kit-texto {
+  flex: 1 1 60%;
+  min-width: 0;
+  text-align: left;
+}
+
+.banner-kit-imagen {
+  flex: 0 0 clamp(150px, 32%, 230px);
+  height: clamp(150px, 14vw, 190px);
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .45);
+}
+
+.banner-kit-imagen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.col-md-6:first-child .banner-kit {
+  background-color: var(--verde);
+}
+
+.col-md-6:last-child .banner-kit {
+  background-color: #ffd6d6;
+}
+
+/* 9. Categorías */
+.categoria-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 120px;
+  padding: 28px 18px;
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  background-color: var(--fondo-nav);
+  color: var(--texto);
+  text-align: center;
+  text-decoration: none;
+  transition: .2s;
+}
+
+.categoria-box:hover {
+  background-color: var(--panel);
+  border-color: var(--verde);
+  color: var(--verde);
+  transform: translateY(-3px);
+}
+
+.categoria-box i {
+  color: var(--verde);
+}
+
+/* 10. Tarjetas de productos */
+.card-producto {
+  overflow: hidden;
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  background-color: var(--fondo-nav);
+  color: var(--texto);
+  transition: .2s;
+}
+
+.card-producto:hover {
+  border-color: var(--verde);
+  transform: translateY(-5px);
+}
+
+.card-producto-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: clamp(145px, 15vw, 190px);
+  padding: 14px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.card-producto-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-producto .card-body {
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(.9rem, 1.5vw, 1.25rem);
+  text-align: center;
+}
+
+.card-producto .card-title {
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+}
+
+.card-producto .card-text {
+  font-size: clamp(.82rem, 1vw, .95rem);
+}
+
+.card-producto .precio {
+  margin: 12px 0;
+  color: var(--verde);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-weight: bold;
+}
+
+.card-producto .btn {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+/* 11. Tarjetas de blog */
+.blog-card {
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  background-color: var(--fondo-nav);
+  color: var(--texto);
+}
+
+.blog-card .card-body {
+  padding: clamp(1.2rem, 2.5vw, 2rem) 1.5rem;
+  text-align: center;
+}
+
+.blog-card .card-title {
+  margin-bottom: 14px;
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+}
+
+.blog-card .card-body a {
+  margin-top: 10px;
+  padding: 8px 20px;
+  border-radius: 10px;
+}
+
+/* 12. Página Nosotros */
+.info-company-card,
+.company-focus-card,
+.company-categories-card {
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  background-color: var(--fondo-nav);
+}
+
+.info-company-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.info-company-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 72px;
+  height: 72px;
+  border-radius: 18px;
+  background-color: var(--panel);
+  color: var(--verde);
+  font-size: 2rem;
+}
+
+.info-company-card h2,
+.company-focus-card h2,
+.company-categories-card h2 {
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.info-company-card p {
+  margin-bottom: 12px;
+  color: var(--texto-secundario);
+  line-height: 1.7;
+}
+
+.company-value-card {
+  height: 100%;
+  padding: 30px;
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  background-color: var(--fondo-nav);
+  text-align: center;
+}
+
+.company-value-icon {
+  margin-bottom: 16px;
+  color: var(--verde);
+  font-size: 2.3rem;
+}
+
+.company-value-card h3 {
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.company-value-card p {
+  margin-bottom: 0;
+  color: var(--texto-secundario);
+  line-height: 1.7;
+}
+
+.focus-item {
+  padding: 12px;
+  text-align: center;
+}
+
+.focus-item > i {
+  margin-bottom: 14px;
+  color: var(--verde);
+  font-size: 2.2rem;
+}
+
+.focus-item h4 {
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.focus-item p {
+  margin-bottom: 0;
+  color: #aebed1;
+  line-height: 1.6;
+}
+
+.mini-category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 108px;
+  padding: 18px 10px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background-color: var(--panel);
+}
+
+.mini-category i {
+  color: var(--verde);
+  font-size: 1.5rem;
+}
+
+.mini-category span {
+  color: var(--texto);
+  font-size: .9rem;
+}
+
+/* 13. Pie de página */
+footer {
+  border-top: 1px solid var(--borde);
+  background-color: #111827;
+  color: var(--texto-secundario);
+}
+
+/* 14. Menú responsive */
+.navbar-custom .navbar-toggler {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-custom .navbar-toggler {
+    display: block;
+    padding: 5px 8px;
+    border: 1px solid var(--verde);
+    border-radius: 7px;
+  }
+
+  .navbar-custom .navbar-toggler:focus {
+    box-shadow: 0 0 0 .15rem rgba(95, 211, 163, .25);
+  }
+
+  .navbar-custom .navbar-collapse {
+    display: none !important;
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background-color: #152e4f;
+  }
+
+  .navbar-custom .navbar-collapse.show {
+    display: block !important;
+  }
+
+  .navbar-custom .navbar-nav {
+    align-items: stretch;
+    gap: 2px;
+  }
+
+  .navbar-custom .nav-link-custom {
+    display: block;
+    width: fit-content;
+    padding: 7px 10px !important;
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .navbar-custom .container,
+  .top-bar-actions .container {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .nav-link-custom {
+    padding-right: 6px !important;
+    padding-left: 6px !important;
+    font-size: .84rem;
+  }
+
+  .navbar-custom .navbar-nav {
+    gap: 2px;
+  }
+
+  .brand-logo {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .cart-panel {
+    right: 15px;
+    width: calc(100vw - 30px);
+  }
+
+  .banner-kit-con-imagen {
+    align-items: stretch;
+  }
+
+  .banner-kit-texto {
+    flex-basis: 60%;
+  }
+
+  .banner-kit-imagen {
+    flex-basis: 40%;
+    min-height: 150px;
+    height: auto;
+  }
+
+  .info-company-card {
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-bar-actions .container {
+    gap: 6px !important;
+  }
+
+  .btn-top-cart,
+  .btn-top-login {
+    padding: 6px 8px;
+    font-size: .76rem;
+  }
+
+  .banner-kit-con-imagen {
+    gap: 10px;
+  }
+
+  .banner-kit-imagen {
+    flex-basis: 38%;
+    min-height: 130px;
+  }
+}
+
+
+
+
+
+/* BUSCADOR */
+.buscador {
+    text-align: center;
+    padding: 30px;
+}
+
+.buscador input {
+    width: 60%;
+    padding: 12px;
+}
+
+.buscador button {
+    padding: 12px;
+    background: #2563eb;
+    border: none;
+}
