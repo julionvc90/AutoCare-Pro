@@ -11,6 +11,44 @@ document.addEventListener("DOMContentLoaded", inicializarPagina);
 function inicializarPagina() {
   actualizarContadorCarrito();
   configurarPanelCarrito();
+  mostrarSesionEnBarra();
+}
+
+/* Sesión: si hay un usuario logueado, la barra superior muestra su nombre,
+   un acceso al panel (solo administrador y vendedor) y "Salir". */
+function mostrarSesionEnBarra() {
+  const botonLogin = document.querySelector(".btn-top-login");
+  if (!botonLogin) return;
+
+  let sesion = null;
+  try {
+    sesion = JSON.parse(localStorage.getItem("usuarioActivo"));
+  } catch (error) {
+    sesion = null;
+  }
+  if (!sesion || !sesion.nombre) return;
+
+  const esPersonal = sesion.rol === "ADMINISTRADOR" || sesion.rol === "VENDEDOR";
+
+  botonLogin.removeAttribute("href");
+  botonLogin.style.cursor = "default";
+  botonLogin.innerHTML = '<i class="fa-solid fa-user" aria-hidden="true"></i><span></span>';
+  botonLogin.querySelector("span").textContent = sesion.nombre;
+
+  if (esPersonal) {
+    const panel = document.createElement("a");
+    panel.href = "admin-home.html";
+    panel.className = "btn-top-login";
+    panel.innerHTML = '<i class="fa-solid fa-gauge" aria-hidden="true"></i><span>Panel</span>';
+    botonLogin.insertAdjacentElement("afterend", panel);
+  }
+
+  const salir = document.createElement("a");
+  salir.href = "index.html";
+  salir.className = "btn-top-login";
+  salir.innerHTML = '<i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i><span>Salir</span>';
+  salir.addEventListener("click", () => localStorage.removeItem("usuarioActivo"));
+  (esPersonal ? botonLogin.nextElementSibling : botonLogin).insertAdjacentElement("afterend", salir);
 }
 
 /* 3. Buscador */
@@ -29,20 +67,75 @@ function buscarProducto() {
 }
 
 /* 4. Operaciones del carrito */
-function agregarAlCarrito(nombre, precio) {
+// Regla de stock: el carrito nunca puede tener más unidades que el stock del
+// producto. Si el producto no está en listaProductos (o funciones.js no está
+// cargado en la página, como en index.html) se usa un tope fijo.
+const CANTIDAD_MAXIMA_POR_PRODUCTO = 10;
+
+function obtenerLimiteProducto(nombre) {
+  if (typeof listaProductos !== "undefined") {
+    const producto = listaProductos.find(p => p.nombre === nombre);
+    if (producto) return producto.stock;
+  }
+  return CANTIDAD_MAXIMA_POR_PRODUCTO;
+}
+
+function agregarAlCarrito(nombre, precio, cantidad = 1) {
   const carrito = obtenerCarrito();
   const productoExistente = carrito.find(producto => producto.nombre === nombre);
+  const limite = obtenerLimiteProducto(nombre);
+  const cantidadActual = productoExistente ? productoExistente.cantidad : 0;
+  const cantidadFinal = Math.min(cantidadActual + cantidad, limite);
+  const agregadas = cantidadFinal - cantidadActual;
+
+  if (agregadas <= 0) {
+    alert(`Ya tienes en el carrito todas las unidades disponibles de "${nombre}" (${limite}).`);
+    return;
+  }
 
   if (productoExistente) {
-    productoExistente.cantidad += 1;
+    productoExistente.cantidad = cantidadFinal;
   } else {
-    carrito.push({ nombre, precio, cantidad: 1 });
+    carrito.push({ nombre, precio, cantidad: cantidadFinal });
   }
 
   guardarCarrito(carrito);
+  refrescarCarrito();
+
+  if (agregadas < cantidad) {
+    alert(`Solo quedaban ${limite} unidades de "${nombre}". Se agregaron ${agregadas}.`);
+  } else {
+    alert(`${agregadas} x "${nombre}" fue añadido al carrito.`);
+  }
+}
+
+// Cambia la cantidad de un producto ya agregado (1 hasta el límite de stock).
+// Devuelve la cantidad final para que la vista pueda mostrar avisos.
+function cambiarCantidadCarrito(nombre, nuevaCantidad) {
+  const carrito = obtenerCarrito();
+  const producto = carrito.find(p => p.nombre === nombre);
+  if (!producto) return 0;
+
+  producto.cantidad = Math.max(1, Math.min(nuevaCantidad, obtenerLimiteProducto(nombre)));
+  guardarCarrito(carrito);
+  refrescarCarrito();
+  return producto.cantidad;
+}
+
+function eliminarDelCarrito(nombre) {
+  guardarCarrito(obtenerCarrito().filter(p => p.nombre !== nombre));
+  refrescarCarrito();
+}
+
+function vaciarCarrito() {
+  guardarCarrito([]);
+  refrescarCarrito();
+}
+
+// Mantiene sincronizados el contador y el panel desplegable tras cualquier cambio.
+function refrescarCarrito() {
   actualizarContadorCarrito();
   actualizarPanelCarrito();
-  alert(`"${nombre}" fue añadido al carrito.`);
 }
 
 function obtenerCarrito() {
