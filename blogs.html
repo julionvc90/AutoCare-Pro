@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMG/technical_13191571.png" type="image/x-icon" sizes="32x32">
+  <title>AutoCare Pro - Blogs</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/3d3d423e08.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="top-bar-actions">
+    <div class="container d-flex justify-content-end align-items-center gap-3">
+      <a href="Login.html" class="btn-top-login">
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
+        <span>Iniciar Sesión</span>
+      </a>
+
+      <button class="btn-top-cart" type="button" id="btnCarrito" aria-expanded="false" aria-controls="panelCarrito">
+        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+        <span>Carrito</span>
+        <span class="cart-badge" id="contadorCarrito">0</span>
+      </button>
+
+      <div class="cart-panel" id="panelCarrito" hidden>
+        <div class="cart-panel-header">
+          <h2 class="h6 mb-0">Productos en tu carrito</h2>
+          <button type="button" class="cart-close" id="cerrarCarrito" aria-label="Cerrar carrito">&times;</button>
+        </div>
+
+        <div id="listaCarrito" class="cart-list">
+          <p class="cart-empty mb-0">El carrito está vacío.</p>
+        </div>
+
+        <div class="cart-panel-footer">
+          <span>Total:</span>
+          <strong id="totalCarrito">$0</strong>
+        </div>
+
+        <a href="index.html" class="btn btn-success btn-sm w-100 mt-3">Ver carrito completo</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container">
+      <a class="brand-logo" href="index.html" aria-label="Ir al inicio de AutoCare Pro">
+        <img src="IMG/Logo.png" alt="AutoCare Pro" width="15%">
+        <span class="auto">AUTO</span>
+        <span class="care">CARE</span>
+        <span class="pro">Pro</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navTienda" aria-controls="navTienda" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navTienda">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="SobreNosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="Catalogo.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom active" href="blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5 mb-5">
+    <section class="blog-hero">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-8">
+          <article class="blog-featured">
+            <img src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=1200&q=80" alt="Persona revisando el aceite del motor del auto">
+            <div class="blog-featured-body">
+              <span class="blog-tag">Mantenimiento</span>
+              <h2>¿Cada cuánto debes cambiar el aceite del motor?</h2>
+              <p>
+                Conocer el intervalo correcto evita desgaste prematuro, falla en componentes y costos inesperados.
+                En este artículo te explicamos cómo decidir según el tipo de aceite y el uso real del vehículo.
+              </p>
+              <div class="blog-meta">
+                <span>5 min de lectura</span>
+                <span>23 de septiembre de 2026</span>
+              </div>
+              <a href="#blog1" class="btn btn-success">Leer artículo</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-lg-4">
+          <aside class="blog-sidebar">
+            <h3>Temas destacados</h3>
+            <ul>
+              <li><a href="#blog1">Cambio de aceite</a></li>
+              <li><a href="#blog2">Detailing seguro</a></li>
+              <li><a href="#blog3">Limpieza de interiores</a></li>
+              <li><a href="#blog4">Accesorios esenciales</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="row g-4 mt-1">
+      <div class="col-md-6 col-xl-4">
+        <article class="blog-list-card" id="blog1">
+          <span class="blog-tag">Mantenimiento</span>
+          <h3>¿Cada cuánto cambiar el aceite?</h3>
+          <p>El tiempo ideal depende del tipo de aceite, el modelo y el uso del vehículo.</p>
+          <a href="#articulo-1" class="btn btn-sm btn-outline-light">Leer más</a>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <article class="blog-list-card" id="blog2">
+          <span class="blog-tag">Detailing</span>
+          <h3>Cómo lavar tu auto sin dañar la pintura</h3>
+          <p>Usa la técnica adecuada para conservar brillo y evitar rayones en la carrocería.</p>
+          <a href="#articulo-2" class="btn btn-sm btn-outline-light">Leer más</a>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <article class="blog-list-card" id="blog3">
+          <span class="blog-tag">Interior</span>
+          <h3>5 hábitos para mantener limpio el interior</h3>
+          <p>Pequeños ajustes diarios ayudan a conservar el piso, los asientos y los paneles.</p>
+          <a href="#articulo-3" class="btn btn-sm btn-outline-light">Leer más</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="blog-article-stack mt-5">
+      <article class="blog-article-card" id="articulo-1">
+        <div class="blog-article-header">
+          <span class="blog-tag">Mantenimiento</span>
+          <h2>¿Cada cuánto debes cambiar el aceite del motor?</h2>
+        </div>
+
+        <div class="blog-article-body">
+          <p>
+            El cambio de aceite es una de las tareas más importantes para prolongar la vida útil del motor. El intervalo recomendado
+a menudo se expresa en kilómetros o meses, pero la mejor guía es combinar ambos factores.
+          </p>
+          <p>
+            Si usas tu vehículo en ciudad, con tráfico constante y arrancadas frecuentes, el motor trabaja más y el aceite se degrada más rápido.
+            En esos casos, revisar el nivel y el estado del fluido cada 3.000 o 5.000 kilómetros puede ser una buena práctica.
+          </p>
+          <p>
+            Además, no todos los aceites son iguales. Los sintéticos suelen tener mayor resistencia y duración, mientras que los minerales
+            suelen requerir cambios más frecuentes. Revisa las recomendaciones del fabricante y el tipo de uso real de tu auto.
+          </p>
+          <ul>
+            <li>Usa un aceite compatible con tu motor.</li>
+            <li>No ignores luces de advertencia o ruidos extraños.</li>
+            <li>Haz el cambio con el filtro correspondiente.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="blog-article-card" id="articulo-2">
+        <div class="blog-article-header">
+          <span class="blog-tag">Detailing</span>
+          <h2>Cómo lavar tu auto sin dañar la pintura</h2>
+        </div>
+
+        <div class="blog-article-body">
+          <p>
+            El lavado correcto no solo mejora la apariencia del vehículo, sino que también protege la pintura. Evitar materiales abrasivos
+            y usar la técnica adecuada es la clave para no generar rayones ni desgaste prematuro.
+          </p>
+          <p>
+            Empieza con una limpieza previa para retirar tierra y polvo seco. Luego aplica shampoo específico para autos y usa paños de microfibra.
+            Nunca laves la carrocería bajo la luz directa del sol, ya que el agua y el jabón pueden dejar marcas secas.
+          </p>
+          <p>
+            También es recomendable secar con toalla de microfibra y, si haces detalle más profundo, usar cera o sellador para preservar el brillo.
+            Un auto bien lavado tiene mejor apariencia y mantiene mejor su valor con el tiempo.
+          </p>
+        </div>
+      </article>
+
+      <article class="blog-article-card" id="articulo-3">
+        <div class="blog-article-header">
+          <span class="blog-tag">Interior</span>
+          <h2>5 hábitos para mantener limpio el interior del auto</h2>
+        </div>
+
+        <div class="blog-article-body">
+          <p>
+            El interior del auto acumula polvo, restos de comida, suciedad de zapatos y humedad. Mantenerlo ordenado no solo mejora la experiencia,
+            sino que también ayuda a evitar malos olores y desgaste del tapizado.
+          </p>
+          <p>
+            Algunos hábitos sencillos pueden marcar la diferencia: usar una alfombrilla, limpiar los vidrios con un producto específico,
+            aspirar con regularidad y revisar la humedad tras lluvias o lavado de autos.
+          </p>
+          <ul>
+            <li>Evita dejar bolsas, recipientes o comida durante mucho tiempo.</li>
+            <li>Usa un aspirador para zonas de difícil acceso.</li>
+            <li>Revisa periódicamente los paneles y los asientos.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="text-center py-5 mt-5">
+    <img src="IMG/SobreNosotros.png" alt="Sobre Nosotros">
+    <p class="mb-0 small">© 2026 AutoCare Pro - Repuestos y Accesorios Automotrices</p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

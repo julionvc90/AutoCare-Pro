@@ -11,6 +11,21 @@ document.addEventListener("DOMContentLoaded", inicializarPagina);
 function inicializarPagina() {
   actualizarContadorCarrito();
   configurarPanelCarrito();
+  marcarPaginaActiva();
+}
+
+function marcarPaginaActiva() {
+  const links = document.querySelectorAll(".nav-link-custom");
+  if (!links.length) return;
+
+  const paginaActual = window.location.pathname.split("/").pop() || "index.html";
+
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    const nombrePagina = href ? href.split("/").pop() : "";
+    const esPaginaActual = nombrePagina === paginaActual;
+    link.classList.toggle("active", esPaginaActual);
+  });
 }
 
 /* 3. Buscador */

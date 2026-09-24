@@ -504,7 +504,147 @@ body {
   border-radius: 10px;
 }
 
-/* 12. Página Nosotros */
+/* 12. Página Blogs */
+.blog-hero {
+  margin-top: 1.5rem;
+}
+
+.blog-featured,
+.blog-list-card,
+.blog-sidebar,
+.blog-article-card {
+  border: 1px solid var(--borde);
+  border-radius: 22px;
+  background-color: var(--fondo-nav);
+  overflow: hidden;
+}
+
+.blog-featured {
+  height: 100%;
+}
+
+.blog-featured img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.blog-featured-body {
+  padding: 1.5rem;
+}
+
+.blog-tag {
+  display: inline-block;
+  margin-bottom: .9rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: rgba(95, 211, 163, .12);
+  color: var(--verde);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.blog-featured h2,
+.blog-list-card h3,
+.blog-article-card h2,
+.blog-sidebar h3 {
+  color: #fff;
+}
+
+.blog-featured h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.7rem, 2vw, 2.3rem);
+}
+
+.blog-featured p,
+.blog-list-card p,
+.blog-article-card p,
+.blog-article-card li,
+.blog-sidebar li,
+.blog-sidebar a {
+  color: var(--texto-secundario);
+  line-height: 1.75;
+}
+
+.blog-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 1.3rem;
+  color: #b9c8da;
+  font-size: .82rem;
+}
+
+.blog-sidebar {
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.blog-sidebar h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.blog-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blog-sidebar li + li {
+  margin-top: .8rem;
+}
+
+.blog-sidebar a {
+  text-decoration: none;
+}
+
+.blog-sidebar a:hover {
+  color: var(--verde);
+}
+
+.blog-list-card {
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.blog-list-card h3 {
+  margin-bottom: .8rem;
+  font-size: 1.25rem;
+}
+
+.blog-list-card .btn {
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+.blog-article-stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.blog-article-card {
+  padding: 1.5rem;
+}
+
+.blog-article-header {
+  margin-bottom: 1rem;
+}
+
+.blog-article-card h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.blog-article-card ul {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+
+/* 13. Página Nosotros */
 .info-company-card,
 .company-focus-card,
 .company-categories-card {
@@ -757,4 +897,72 @@ footer {
     padding: 12px;
     background: #2563eb;
     border: none;
+}
+
+/* LOGIN */
+.auth-page {
+  background: linear-gradient(180deg, #0f1f32 0%, #101827 100%);
+}
+
+.auth-card {
+  border: 1px solid rgba(95, 211, 163, 0.3);
+  border-radius: 22px;
+  background: rgba(26, 50, 83, 0.9);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.auth-card-body {
+  padding: 2rem;
+}
+
+.auth-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 1rem;
+  border-radius: 18px;
+  background: rgba(95, 211, 163, 0.12);
+  color: var(--verde);
+  font-size: 1.8rem;
+}
+
+.form-grupo {
+  margin-bottom: 1rem;
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #e8edf4;
+  font-weight: 600;
+}
+
+.form-grupo input {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+
+.form-grupo input::placeholder {
+  color: #9fb3c8;
+}
+
+.auth-message {
+  min-height: 22px;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.auth-message.success {
+  color: #7ef0b0;
+}
+
+.auth-message.error {
+  color: #ff9a9a;
 }

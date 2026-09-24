@@ -34,95 +34,119 @@ const usuarios = [
 // 1. LISTA DE PRODUCTOS CON RUTAS LOCALES (Asegúrate de que los nombres coincidan en tu carpeta IMG)
 const listaProductos = [
     // --- Aceites & Filtros ---
-    { 
-        id: 1, 
-        categoria: "aceites", 
-        nombre: "Aceite de Motor Castrol Edge 5W-30 4L", 
-        precio: "$34.990", 
-        imagen: "IMG/aceite-5w30.jpg"  // <-- Cambia 'aceite.png' por el nombre real de tu archivo
+    {
+        id: 1,
+        categoria: "aceites",
+        nombre: "Aceite de Motor Castrol Edge 5W-30 4L",
+        precio: "$34.990",
+        precioNumerico: 34990,
+        descripcion: "Aceite sintético de alto rendimiento para motores modernos, ideal para proteger y prolongar la vida útil del motor.",
+        imagen: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=900&q=80"
     },
-    { 
-        id: 2, 
-        categoria: "aceites", 
-        nombre: "Filtro de Aceite Blindado Premium", 
-        precio: "$8.500", 
-        imagen: "IMG/filtro.jpg" 
+    {
+        id: 2,
+        categoria: "aceites",
+        nombre: "Filtro de Aceite Blindado Premium",
+        precio: "$8.500",
+        precioNumerico: 8500,
+        descripcion: "Filtro de aceite con alta capacidad de retención para ofrecer mejor limpieza y protección interna del motor.",
+        imagen: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80"
     },
-    { 
-        id: 3, 
-        categoria: "aceites", 
-        nombre: "Filtro de Aire Cónico de Alto Flujo", 
-        precio: "$15.990", 
-        imagen: "IMG/filtro-aire.jpg" 
+    {
+        id: 3,
+        categoria: "aceites",
+        nombre: "Filtro de Aire Cónico de Alto Flujo",
+        precio: "$15.990",
+        precioNumerico: 15990,
+        descripcion: "Mejora la entrada de aire al motor y ayuda a mantener un mejor rendimiento y consumo eficiente del combustible.",
+        imagen: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"
     },
 
     // --- Detailing & Limpieza ---
-    { 
-        id: 4, 
-        categoria: "detailing", 
-        nombre: "Shampoo Autolavado con Cera Concentrada", 
-        precio: "$12.990", 
-        imagen: "IMG/shampoo.jpg" 
+    {
+        id: 4,
+        categoria: "detailing",
+        nombre: "Shampoo Autolavado con Cera Concentrada",
+        precio: "$12.990",
+        precioNumerico: 12990,
+        descripcion: "Solución de limpieza que elimina suciedad y deja una capa de brillo suave sin dañar la pintura del vehículo.",
+        imagen: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=900&q=80"
     },
-    { 
-        id: 5, 
-        categoria: "detailing", 
-        nombre: "Paños de Microfibra Ultra Absorbente (3u)", 
-        precio: "$5.490", 
-        imagen: "IMG/microfibra.jpg" 
+    {
+        id: 5,
+        categoria: "detailing",
+        nombre: "Paños de Microfibra Ultra Absorbente (3u)",
+        precio: "$5.490",
+        precioNumerico: 5490,
+        descripcion: "Paños suaves y absorbentes ideales para secado, pulido y limpieza del interior y exterior del auto.",
+        imagen: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=80"
     },
-    { 
-        id: 6, 
-        categoria: "detailing", 
-        nombre: "Limpiador de Llantas Activo", 
-        precio: "$8.990", 
-        imagen: "IMG/limpiador-llantas.jpg" 
+    {
+        id: 6,
+        categoria: "detailing",
+        nombre: "Limpiador de Llantas Activo",
+        precio: "$8.990",
+        precioNumerico: 8990,
+        descripcion: "Elimina suciedad y óxido de las llantas, dejando un acabado más limpio y renovado para tu vehículo.",
+        imagen: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=900&q=80"
     },
 
     // --- Ampolletas & Electricidad ---
-    { 
-        id: 7, 
-        categoria: "electricidad", 
-        nombre: "Ampolletas LED H7 de Alta Potencia", 
-        precio: "$21.990", 
-        imagen: "IMG/ampolleta.jpg" 
+    {
+        id: 7,
+        categoria: "electricidad",
+        nombre: "Ampolletas LED H7 de Alta Potencia",
+        precio: "$21.990",
+        precioNumerico: 21990,
+        descripcion: "Ampolletas de larga duración y mejor visibilidad nocturna, pensadas para mayor seguridad al conducir.",
+        imagen: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80"
     },
-    { 
-        id: 8, 
-        categoria: "electricidad", 
-        nombre: "Set de Fusibles Automotrices Surtidos", 
-        precio: "$4.500", 
-        imagen: "IMG/fusibles.jpg" 
+    {
+        id: 8,
+        categoria: "electricidad",
+        nombre: "Set de Fusibles Automotrices Surtidos",
+        precio: "$4.500",
+        precioNumerico: 4500,
+        descripcion: "Kit de fusibles de diferentes amperajes para reemplazos rápidos y soluciones eléctricas de emergencia.",
+        imagen: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80"
     },
-    { 
-        id: 9, 
-        categoria: "electricidad", 
-        nombre: "Batería de Auto 12V 60AH Libre Mantención", 
-        precio: "$68.990", 
-        imagen: "IMG/bateria.jpg" 
+    {
+        id: 9,
+        categoria: "electricidad",
+        nombre: "Batería de Auto 12V 60AH Libre Mantención",
+        precio: "$68.990",
+        precioNumerico: 68990,
+        descripcion: "Batería confiable para uso diario, con buena potencia de arranque y resistencia para diversas condiciones.",
+        imagen: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80"
     },
 
     // --- Accesorios ---
-    { 
-        id: 10, 
-        categoria: "accesorios", 
-        nombre: "Gata Hidráulica de Caimán 2 Toneladas", 
-        precio: "$38.000", 
-        imagen: "IMG/gata.jpg" 
+    {
+        id: 10,
+        categoria: "accesorios",
+        nombre: "Gata Hidráulica de Caimán 2 Toneladas",
+        precio: "$38.000",
+        precioNumerico: 38000,
+        descripcion: "Gata robusta y segura para trabajos mecánicos básicos, ideal para cambios de neumáticos y revisiones del vehículo.",
+        imagen: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"
     },
-    { 
-        id: 11, 
-        categoria: "accesorios", 
-        nombre: "Compresor de Aire Portátil 12V Digital", 
-        precio: "$24.990", 
-        imagen: "IMG/compresor.jpg" 
+    {
+        id: 11,
+        categoria: "accesorios",
+        nombre: "Compresor de Aire Portátil 12V Digital",
+        precio: "$24.990",
+        precioNumerico: 24990,
+        descripcion: "Compresor compacto para inflado rápido de neumáticos y uso práctico en viajes o mantenimiento del vehículo.",
+        imagen: "https://images.unsplash.com/photo-1558980664-10e7170b5df9?auto=format&fit=crop&w=900&q=80"
     },
-    { 
-        id: 12, 
-        categoria: "accesorios", 
-        nombre: "Cables Pasa Corriente Reforzados 3 Metros", 
-        precio: "$11.990", 
-        imagen: "IMG/cables.jpg" 
+    {
+        id: 12,
+        categoria: "accesorios",
+        nombre: "Cables Pasa Corriente Reforzados 3 Metros",
+        precio: "$11.990",
+        precioNumerico: 11990,
+        descripcion: "Cables resistentes para arranque de emergencia, con conexión segura y mayor durabilidad para uso frecuente.",
+        imagen: "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80"
     }
 ];
 
@@ -284,6 +308,19 @@ function buscarProductos(termino) {
     });
 }
 
+function renderProductosHome(cantidad = 4) {
+    const contenedor = document.getElementById('contenedorProductos');
+    if (!contenedor) return;
+
+    const productosHome = listaProductos.slice(0, cantidad);
+    cargarProductos(productosHome);
+
+    const titulo = document.getElementById('titulo-productos');
+    if (titulo) {
+        titulo.innerText = 'Productos para mantenimiento preventivo';
+    }
+}
+
 function cargarProductos(productosAMostrar) {
     const contenedor = document.getElementById('contenedorProductos');
     if (!contenedor) return; 
@@ -301,25 +338,22 @@ function cargarProductos(productosAMostrar) {
     }
 
     productosAMostrar.forEach(producto => {
+        const descripcion = producto.descripcion || "Producto de alta calidad ideal para mantener tu vehículo en óptimas condiciones.";
+        const precioNumerico = Number(producto.precioNumerico ?? 0);
+
         const cardProducto = `
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card h-100 border-0 bg-white text-dark shadow-sm" style="border-radius: 12px; overflow: hidden;">
-              <div class="p-3 d-flex align-items-center justify-content-center" style="height: 160px; background-color: #f8f9fa;">
-                <img src="${producto.imagen}" alt="${producto.nombre}" class="img-fluid" style="max-height: 100%; object-fit: contain;">
+            <article class="card card-producto h-100">
+              <div class="card-producto-img">
+                <img src="${producto.imagen}" alt="${producto.nombre}">
               </div>
-              <div class="card-body d-flex flex-column justify-content-between">
-                <div>
-                  <h3 class="card-title h5 fw-bold mb-1" style="font-size: 16px;">${producto.nombre}</h3>
-                  <p class="card-text text-muted small mb-3" style="font-size: 13px;">${producto.descripcion}</p>
-                </div>
-                <div>
-                  <p class="fw-bold text-primary h5 mb-2">${producto.precio}</p>
-                  <button class="btn btn-sm btn-success w-100 fw-bold" type="button" onclick="agregarAlCarrito('${producto.nombre}', ${producto.precioNumerico})">
-                    Comprar
-                  </button>
-                </div>
+              <div class="card-body">
+                <h3 class="card-title h5">${producto.nombre}</h3>
+                <p class="card-text small mb-2">${descripcion}</p>
+                <p class="precio">${producto.precio}</p>
+                <button class="btn btn-sm btn-outline-success" type="button" onclick="agregarAlCarrito('${producto.nombre}', ${precioNumerico})">Comprar</button>
               </div>
-            </div>
+            </article>
           </div>
         `;
         contenedor.innerHTML += cardProducto;
@@ -353,6 +387,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (document.getElementById('contenedorProductos')) {
+        const paginaActual = window.location.pathname.split('/').pop() || 'index.html';
+
+        if (paginaActual === 'index.html' && !terminoBusqueda) {
+            renderProductosHome(4);
+            return;
+        }
+
         const productosMostrados = buscarProductos(terminoBusqueda);
         cargarProductos(productosMostrados);
 
