@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoCare PRO</title>
+</head>
+<body>
+
+    <!-- roles-->
+    <nav>
+        <button onclick="mostrarVista('cliente')">Vista Cliente</button>
+        <button onclick="mostrarVista('vendedor')">Vista Vendedor</button>
+        <button onclick="mostrarVista('admin')">Vista Admin</button>
+    </nav>
+
+    <hr>
+
+    <!-- rol cliente -->
+    <div id="vista-cliente">
+        <h2>Cliente: Agendar Hora</h2>
+        <p>Nombre: <input type="text" id="nombre"></p>
+        <p>Patente: <input type="text" id="patente"></p>
+        <p>Servicio: 
+            <select id="servicio">
+
+            </select>
+        </p>
+        <button onclick="guardarReserva()">Reservar Hora</button>
+    </div>
+
+    <!-- rol vendedor -->
+    <div id="vista-vendedor" style="display: none;">
+        <h2>Vendedor: Control de Reservas</h2>
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Patente</th>
+                    <th>Servicio</th>
+                    <th>Estado</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-reservas">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <!-- rol administrador -->
+    <div id="vista-admin" style="display: none;">
+        <h2>Admin: Gestión de Servicios</h2>
+        
+        <h3>Agregar / Modificar Servicio</h3>
+        <p>Nombre: <input type="text" id="adm-nombre"></p>
+        <p>Precio ($): <input type="number" id="adm-precio"></p>
+        <button onclick="guardarServicio()">Guardar Servicio</button>
+
+        <h3>Lista de Servicios (Editar / Eliminar)</h3>
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>Servicio</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-servicios-admin">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <!-- direccion al archivo de script -->
+    <script src="script.js"></script>
+
+</body>
+</html>
