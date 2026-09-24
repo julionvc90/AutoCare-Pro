@@ -21,11 +21,11 @@ function buscarProducto() {
   const termino = buscador.value.trim();
 
   if (!termino) {
-    alert("Por favor ingrese un término de búsqueda.");
+    window.location.href = "Catalogo.html";
     return;
   }
 
-  alert(`Buscando productos relacionados con: "${termino}".`);
+  window.location.href = `Catalogo.html?buscar=${encodeURIComponent(termino)}`;
 }
 
 /* 4. Operaciones del carrito */

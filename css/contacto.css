@@ -1,109 +1,131 @@
-* {
-    box-sizing: border-box
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0b1522
-}
-
 .contacto {
     width: 100%;
     padding: 80px 20px;
     background: #0b1522;
-    color: #fff
+    color: #fff;
 }
 
-.contacto-container {
+.contacto .container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px
 }
 
 .contacto-info,
-.contacto-formulario {
-    padding: 40px;
+.contacto-formulario-card {
+    width: 100%;
+    height: 100%;
+    padding: 2.2rem;
     border: 1px solid #303b49;
     border-radius: 20px;
     background: #101c2a;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .25)
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.contacto-cabecera {
+    text-align: center;
 }
 
 .contacto-subtitulo {
     color: #e30613;
     font-size: 14px;
     font-weight: 700;
-    letter-spacing: 3px
+    letter-spacing: 3px;
+}
+
+.line-decorator {
+    display: inline-block;
+    width: 42px;
+    height: 2px;
+    border-radius: 999px;
+    background: #e30613;
 }
 
 .contacto-info h2,
-.contacto-formulario h2 {
+.contacto-formulario-card h2 {
     margin: 10px 0 20px;
-    font-size: 32px;
-    font-weight: 800
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    font-weight: 800;
+    text-align: center;
 }
 
 .contacto-descripcion {
     color: #c7cdd4;
     line-height: 1.7;
-    margin-bottom: 35px
+    text-align: center;
 }
 
 .contacto-datos {
     display: flex;
     flex-direction: column;
-    gap: 20px
+    gap: 18px;
+    align-items: center;
+    margin-top: 1.2rem;
 }
 
 .contacto-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 18px;
-    padding: 15px;
+    width: 100%;
+    padding: 1rem 1.1rem;
     border-radius: 12px;
-    transition: .3s
+    transition: .3s;
+    text-align: left;
 }
 
 .contacto-item:hover {
     background: #172536;
-    transform: translateX(5px)
+    transform: translateY(-2px);
 }
 
 .contacto-icono {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #e30613;
+    background: rgba(227, 6, 19, .12);
     border-radius: 50%;
-    font-size: 22px;
-    flex-shrink: 0
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.contacto-texto {
+    min-width: 0;
+}
+
+.contacto-item h3,
+.contacto-item p {
+    margin: 0;
 }
 
 .contacto-item h3 {
-    margin: 0 0 5px;
-    font-size: 16px
+    font-size: 0.8rem;
+    letter-spacing: .08em;
+    color: #e7edf5;
 }
 
 .contacto-item p {
-    margin: 0;
     color: #b8c0ca;
-    font-size: 15px
+    font-size: 0.97rem;
 }
 
 .form-grupo {
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .form-grupo label {
     display: block;
     margin-bottom: 8px;
     font-size: 14px;
-    font-weight: 600
+    font-weight: 600;
+    text-align: left;
 }
 
 .form-grupo input,
@@ -116,18 +138,18 @@ body {
     color: #fff;
     font-family: inherit;
     font-size: 15px;
-    outline: none
+    outline: none;
 }
 
 .form-grupo input:focus,
 .form-grupo textarea:focus {
     border-color: #e30613;
-    box-shadow: 0 0 0 2px rgba(227, 6, 19, .15)
+    box-shadow: 0 0 0 2px rgba(227, 6, 19, .15);
 }
 
 .form-grupo textarea {
     resize: vertical;
-    min-height: 130px
+    min-height: 130px;
 }
 
 .btn-contacto {
@@ -140,32 +162,34 @@ body {
     font-size: 15px;
     font-weight: 800;
     cursor: pointer;
-    transition: .3s
+    transition: .3s;
 }
 
 .btn-contacto:hover {
     background: #c90511;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(227, 6, 19, .25)
+    box-shadow: 0 8px 20px rgba(227, 6, 19, .25);
 }
 
-@media(max-width:800px) {
+@media (max-width: 991.98px) {
     .contacto {
-        padding: 50px 15px
-    }
-
-    .contacto-container {
-        grid-template-columns: 1fr;
-        gap: 25px
+        padding: 60px 15px;
     }
 
     .contacto-info,
-    .contacto-formulario {
-        padding: 25px
+    .contacto-formulario-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contacto-item {
+        flex-direction: column;
+        text-align: center;
     }
 
     .contacto-info h2,
-    .contacto-formulario h2 {
-        font-size: 26px
+    .contacto-formulario-card h2 {
+        font-size: 1.8rem;
     }
 }

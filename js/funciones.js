@@ -258,11 +258,47 @@ if (loginForm) {
     });
 }
 
+function normalizarTexto(texto) {
+    return (texto || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+}
+
+function obtenerTerminoBusqueda() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("buscar")?.trim() || "";
+}
+
+function buscarProductos(termino) {
+    const texto = normalizarTexto(termino);
+
+    if (!texto) return [...listaProductos];
+
+    return listaProductos.filter(producto => {
+        const nombre = normalizarTexto(producto.nombre);
+        const categoria = normalizarTexto(producto.categoria);
+        const descripcion = normalizarTexto(producto.descripcion || "");
+        return nombre.includes(texto) || categoria.includes(texto) || descripcion.includes(texto);
+    });
+}
+
 function cargarProductos(productosAMostrar) {
     const contenedor = document.getElementById('contenedorProductos');
     if (!contenedor) return; 
     
     contenedor.innerHTML = "";
+
+    if (productosAMostrar.length === 0) {
+        contenedor.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <h3 class="text-white mb-3">No se encontraron resultados</h3>
+                <p class="text-light">Intenta buscar otro término como aceite, filtro, cera o batería.</p>
+            </div>
+        `;
+        return;
+    }
 
     productosAMostrar.forEach(producto => {
         const cardProducto = `
@@ -309,8 +345,23 @@ function filtrarCategoria(categoriaSeleccionada) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+    const buscador = document.getElementById('buscador');
+    const terminoBusqueda = obtenerTerminoBusqueda();
+
+    if (buscador && terminoBusqueda) {
+        buscador.value = terminoBusqueda;
+    }
+
     if (document.getElementById('contenedorProductos')) {
-        cargarProductos(listaProductos);
+        const productosMostrados = buscarProductos(terminoBusqueda);
+        cargarProductos(productosMostrados);
+
+        const titulo = document.getElementById('titulo-productos');
+        if (titulo) {
+            titulo.innerText = terminoBusqueda
+                ? `Resultados para: "${terminoBusqueda}"`
+                : 'Productos para mantenimiento preventivo';
+        }
     }
 });
 
