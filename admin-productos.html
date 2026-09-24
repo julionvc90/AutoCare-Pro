@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMG/technical_13191571.png" type="image/x-icon" sizes="32x32">
+  <title>AutoCare Pro - Panel | Productos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/3d3d423e08.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body data-roles="ADMINISTRADOR,VENDEDOR" data-menu="productos" data-pagina="productos">
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="menuLateral" aria-label="Menú de administración"></aside>
+
+    <main class="admin-contenido">
+      <header class="admin-topbar">
+        <button type="button" class="btn btn-sm btn-outline-light d-lg-none" id="btnMenu" aria-label="Abrir menú"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+        <h1 class="admin-titulo" id="tituloForm">Productos</h1>
+        <div class="admin-usuario" id="infoUsuario"></div>
+      </header>
+
+      <div class="admin-cuerpo">
+        <div id="zonaAvisos"></div>
+
+        <section class="admin-card">
+          <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
+            <div class="input-group" style="max-width: 360px;">
+              <label class="visually-hidden" for="filtro">Buscar producto</label>
+              <span class="input-group-text"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span>
+              <input type="search" class="form-control" id="filtro" placeholder="Buscar por código, nombre o categoría">
+            </div>
+            <a class="btn btn-success solo-admin" href="admin-producto-form.html"><i class="fa-solid fa-plus me-2" aria-hidden="true"></i>Nuevo producto</a>
+          </div>
+
+          <div class="tabla-contenedor">
+            <table class="table tabla-admin">
+              <thead><tr><th>Imagen</th><th>Código</th><th>Nombre</th><th>Categoría</th><th>Precio</th><th>Stock</th><th>Acciones</th></tr></thead>
+              <tbody id="cuerpoProductos"></tbody>
+            </table>
+          </div>
+          <nav aria-label="Paginación"><ul class="pagination pagination-sm justify-content-center mt-3 mb-0" id="paginacion"></ul></nav>
+        </section>
+
+        <div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="detalleTitulo" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header"><h2 class="modal-title h5" id="detalleTitulo"></h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+              <div class="modal-body" id="detalleCuerpo"></div>
+              <div class="modal-footer"><button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/funciones.js"></script>
+  <script src="js/regiones.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

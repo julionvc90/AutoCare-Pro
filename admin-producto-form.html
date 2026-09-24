@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMG/technical_13191571.png" type="image/x-icon" sizes="32x32">
+  <title>AutoCare Pro - Panel | Nuevo producto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/3d3d423e08.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body data-roles="ADMINISTRADOR" data-menu="productos" data-pagina="producto-form">
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="menuLateral" aria-label="Menú de administración"></aside>
+
+    <main class="admin-contenido">
+      <header class="admin-topbar">
+        <button type="button" class="btn btn-sm btn-outline-light d-lg-none" id="btnMenu" aria-label="Abrir menú"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+        <h1 class="admin-titulo" id="tituloForm">Nuevo producto</h1>
+        <div class="admin-usuario" id="infoUsuario"></div>
+      </header>
+
+      <div class="admin-cuerpo">
+        <div id="zonaAvisos"></div>
+
+        <section class="admin-card" style="max-width: 760px;">
+          <form id="formProducto" novalidate>
+          <div class="mb-3">
+            <label class="form-label" for="codigo">Código del producto *</label>
+            <input type="text" class="form-control" id="codigo" name="codigo" minlength="3" autocomplete="off">
+            <div class="invalid-feedback"></div>
+            <div class="form-text">Texto, mínimo 3 caracteres.</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="nombre">Nombre *</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" maxlength="150" autocomplete="off">
+            <div class="invalid-feedback"></div>
+            <div class="form-text">Máximo 100 caracteres.</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="descripcion">Descripción <span class="fw-normal">(opcional)</span></label>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="4" data-max="500"></textarea>
+            <div class="invalid-feedback"></div>
+            <small class="contador form-text">0/500</small>
+          </div><div class="row"><div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="precio">Precio (CLP) *</label>
+            <input type="number" class="form-control" id="precio" name="precio" min="0" step="any" inputmode="decimal">
+            <div class="invalid-feedback"></div>
+            <div class="form-text">Mínimo 0 (producto FREE). Admite decimales.</div>
+          </div></div><div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="stock">Stock *</label>
+            <input type="number" class="form-control" id="stock" name="stock" min="0" step="1" inputmode="numeric">
+            <div class="invalid-feedback"></div>
+            <div class="form-text">Unidades en inventario (entero, mínimo 0).</div>
+          </div></div></div>
+          <div class="mb-3">
+            <label class="form-label" for="stockCritico">Stock crítico <span class="fw-normal">(opcional)</span></label>
+            <input type="number" class="form-control" id="stockCritico" name="stockCritico" min="0" step="1" inputmode="numeric">
+            <div class="invalid-feedback"></div>
+            <div class="form-text">Se mostrará una alerta cuando el stock sea igual o inferior a este valor.</div>
+          </div>
+          <div class="alert alert-warning py-2" id="alertaStock" role="alert" hidden><i class="fa-solid fa-triangle-exclamation me-2" aria-hidden="true"></i>El stock actual es igual o inferior al stock crítico.</div>
+          <div class="mb-3">
+            <label class="form-label" for="categoria">Categoría *</label>
+            <select class="form-select" id="categoria" name="categoria"></select>
+            <div class="invalid-feedback"></div>
+          </div>
+          <div class="mb-4">
+            <label class="form-label" for="imagen">Imagen <span class="fw-normal">(opcional)</span></label>
+            <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+            <div class="invalid-feedback"></div>
+            <div class="form-text">Máximo 300 KB.</div>
+            <img id="vistaPrevia" class="vista-previa bg-white" alt="Vista previa de la imagen" hidden>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk me-2" aria-hidden="true"></i>Guardar</button>
+            <a class="btn btn-outline-light" href="admin-productos.html">Cancelar</a>
+          </div>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/funciones.js"></script>
+  <script src="js/regiones.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

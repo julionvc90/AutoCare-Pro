@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMG/technical_13191571.png" type="image/x-icon" sizes="32x32">
+  <title>AutoCare Pro - Panel | Nuevo usuario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/3d3d423e08.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body data-roles="ADMINISTRADOR" data-menu="usuarios" data-pagina="usuario-form">
+  <div class="admin-layout">
+    <aside class="admin-sidebar" id="menuLateral" aria-label="Menú de administración"></aside>
+
+    <main class="admin-contenido">
+      <header class="admin-topbar">
+        <button type="button" class="btn btn-sm btn-outline-light d-lg-none" id="btnMenu" aria-label="Abrir menú"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+        <h1 class="admin-titulo" id="tituloForm">Nuevo usuario</h1>
+        <div class="admin-usuario" id="infoUsuario"></div>
+      </header>
+
+      <div class="admin-cuerpo">
+        <div id="zonaAvisos"></div>
+
+        <section class="admin-card" style="max-width: 760px;">
+          <form id="formUsuario" novalidate>
+          <div class="row">
+            <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="run">RUN *</label>
+            <input type="text" class="form-control" id="run" name="run" maxlength="12" autocomplete="off" placeholder="123456785">
+            <div class="invalid-feedback"></div>
+            <div class="form-text">Sin puntos ni guion, entre 7 y 9 caracteres.</div>
+          </div></div>
+            <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="tipoUsuario">Tipo de usuario *</label>
+            <select class="form-select" id="tipoUsuario" name="tipoUsuario"><option value="">-- Seleccione el tipo --</option><option value="ADMINISTRADOR">Administrador</option><option value="CLIENTE">Cliente</option><option value="VENDEDOR">Vendedor</option></select>
+            <div class="invalid-feedback"></div>
+          </div></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="nombre">Nombre *</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" maxlength="80" autocomplete="off">
+            <div class="invalid-feedback"></div>
+            <div class="form-text">Máximo 50 caracteres.</div>
+          </div></div>
+            <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="apellidos">Apellidos *</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos" maxlength="150" autocomplete="off">
+            <div class="invalid-feedback"></div>
+            <div class="form-text">Máximo 100 caracteres.</div>
+          </div></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="correo">Correo *</label>
+            <input type="email" class="form-control" id="correo" name="correo" maxlength="120" autocomplete="off" placeholder="usuario@duoc.cl">
+            <div class="invalid-feedback"></div>
+            <div class="form-text">Solo @duoc.cl, @profesor.duoc.cl o @gmail.com.</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="password">Contraseña *</label>
+            <input type="password" class="form-control" id="password" name="password" maxlength="20" autocomplete="new-password">
+            <div class="invalid-feedback"></div>
+            <div class="form-text" id="ayudaPassword">Entre 4 y 10 caracteres.</div>
+          </div></div>
+            <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="confirmarPassword">Confirmar contraseña *</label>
+            <input type="password" class="form-control" id="confirmarPassword" name="confirmarPassword" maxlength="20" autocomplete="new-password">
+            <div class="invalid-feedback"></div>
+          </div></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="telefono">Teléfono <span class="fw-normal">(opcional)</span></label>
+            <input type="tel" class="form-control" id="telefono" name="telefono" maxlength="14" autocomplete="off" placeholder="912345678">
+            <div class="invalid-feedback"></div>
+          </div></div>
+            <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="fechaNacimiento">Fecha de nacimiento <span class="fw-normal">(opcional)</span></label>
+            <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" >
+            <div class="invalid-feedback"></div>
+          </div></div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="region">Región *</label>
+            <select class="form-select" id="region" name="region"></select>
+            <div class="invalid-feedback"></div>
+          </div></div>
+            <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label" for="comuna">Comuna *</label>
+            <select class="form-select" id="comuna" name="comuna"></select>
+            <div class="invalid-feedback"></div>
+          </div></div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="direccion">Dirección *</label>
+            <textarea class="form-control" id="direccion" name="direccion" rows="2" data-max="300"></textarea>
+            <div class="invalid-feedback"></div>
+            <small class="contador form-text">0/300</small>
+          </div>
+          <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk me-2" aria-hidden="true"></i>Guardar</button>
+            <a class="btn btn-outline-light" href="admin-usuarios.html">Cancelar</a>
+          </div>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/funciones.js"></script>
+  <script src="js/regiones.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
