@@ -3,12 +3,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import { CATEGORIES } from '../data/products';
 import { useProducts } from '../context/ProductsContext';
 import ProductCard from '../components/ProductCard';
+import SearchBox from '../components/SearchBox';
 
 const ICONOS = {
   aceites: 'fa-oil-can',
   detailing: 'fa-spray-can-sparkles',
   electricidad: 'fa-bolt',
   accesorios: 'fa-screwdriver-wrench',
+  motor: 'fa-gears',
+  frenos: 'fa-circle-dot',
+  carroceria: 'fa-car-side',
 };
 
 export default function Home() {
@@ -18,9 +22,8 @@ export default function Home() {
 
   const destacados = products.slice(0, 4);
 
-  const buscar = (evento) => {
-    evento.preventDefault();
-    const limpio = termino.trim();
+  const buscar = (texto) => {
+    const limpio = String(texto || '').trim();
     navigate(limpio ? `/catalogo?q=${encodeURIComponent(limpio)}` : '/catalogo');
   };
 
@@ -35,26 +38,21 @@ export default function Home() {
         <div className="hero-search text-center">
           <h1>Todo para el cuidado de tu vehículo</h1>
           <p>Repuestos, lubricantes, productos de detailing y accesorios de seguridad</p>
-          <form onSubmit={buscar}>
-            <div className="input-group">
-              <label className="visually-hidden" htmlFor="buscador">Buscar productos</label>
-              <input
-                id="buscador"
-                type="search"
-                className="form-control form-control-lg"
-                placeholder="Buscar productos..."
-                value={termino}
-                onChange={(evento) => setTermino(evento.target.value)}
-              />
-              <button className="btn btn-success" type="submit">Buscar</button>
-            </div>
-          </form>
+          <SearchBox
+            value={termino}
+            onChange={setTermino}
+            onSubmit={buscar}
+            onSelect={(producto) => navigate(`/producto/${producto.id}`)}
+            products={products}
+            categories={CATEGORIES}
+            inputId="buscador"
+          />
         </div>
       </section>
 
       <section className="container mt-5" aria-label="Promociones destacadas">
         <div className="row g-4">
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-lg-7">
             <article className="banner-kit banner-kit-con-imagen">
               <div className="banner-kit-texto">
                 <h2 className="h4">Kit Detailing Completo</h2>
@@ -67,16 +65,18 @@ export default function Home() {
               </div>
             </article>
           </div>
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-lg-5">
             <article className="banner-kit banner-kit-con-imagen alt">
               <div className="banner-kit-texto">
                 <h2 className="h4">Kit Mantenimiento Preventivo</h2>
                 <p>Aceite, filtro de aceite y filtro de aire para tu próxima mantención.</p>
                 <p className="fw-bold">$34.990</p>
+                <ul className="banner-kit-lista">
+                  <li>Aceite 5W-30</li>
+                  <li>Filtro de aceite</li>
+                  <li>Filtro de aire</li>
+                </ul>
                 <Link className="btn btn-sm btn-success" to="/catalogo?cat=aceites">Ver kit</Link>
-              </div>
-              <div className="banner-kit-imagen">
-                <img src="/IMG/kit-mantenimiento.jpg" alt="Kit de mantenimiento" />
               </div>
             </article>
           </div>
@@ -87,7 +87,7 @@ export default function Home() {
         <h2 id="titulo-categorias" className="titulo-seccion">Categorías</h2>
         <div className="row g-4">
           {Object.entries(CATEGORIES).map(([clave, etiqueta]) => (
-            <div className="col-6 col-md-3" key={clave}>
+            <div className="col-12 col-sm-6" key={clave}>
               <Link className="categoria-box" to={`/catalogo?cat=${clave}`}>
                 <i className={`fa-solid ${ICONOS[clave]}`} aria-hidden="true" />
                 <span>{etiqueta}</span>
@@ -132,11 +132,15 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="container text-center mt-4">
-        <Link to="/nosotros">
-          <img src="/IMG/SobreNosotros.png" alt="Conoce AutoCare Pro" style={{ width: '50%' }} />
-        </Link>
-      </div>
+      <section className="container mt-5">
+        <div className="nosotros-cta">
+          <div>
+            <p className="nosotros-cta-label">AutoCare Pro</p>
+            <h2>Repuestos y taller, en un solo lugar</h2>
+          </div>
+          <Link className="btn btn-outline-light" to="/nosotros">Conoce el taller</Link>
+        </div>
+      </section>
     </>
   );
 }

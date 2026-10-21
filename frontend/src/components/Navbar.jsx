@@ -16,10 +16,10 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
       <div className="container">
         <Link className="brand-logo" to="/">
-          <img src="/IMG/Logo.png" alt="AutoCare Pro" width="15%" />
+          <span className="brand-mark" aria-hidden="true" />
           <span className="auto">AUTO</span>
           <span className="care">CARE</span>
-          <span className="pro">Pro</span>
+          <span className="pro">PRO</span>
         </Link>
 
         <button

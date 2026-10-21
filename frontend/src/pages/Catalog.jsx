@@ -1,19 +1,24 @@
 import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { CATEGORIES } from '../data/products';
 import { useProducts } from '../context/ProductsContext';
 import ProductCard from '../components/ProductCard';
+import SearchBox from '../components/SearchBox';
 
 const ICONOS = {
   aceites: 'fa-oil-can',
   detailing: 'fa-spray-can-sparkles',
   electricidad: 'fa-bolt',
   accesorios: 'fa-screwdriver-wrench',
+  motor: 'fa-gears',
+  frenos: 'fa-circle-dot',
+  carroceria: 'fa-car-side',
 };
 
 export default function Catalog() {
   const { products } = useProducts();
   const [params, setParams] = useSearchParams();
+  const navigate = useNavigate();
 
   const categoria = params.get('cat') || '';
   const consulta = params.get('q') || '';
@@ -39,10 +44,9 @@ export default function Catalog() {
     setParams(siguientes);
   };
 
-  const enviarBusqueda = (evento) => {
-    evento.preventDefault();
+  const enviarBusqueda = (texto) => {
     const siguientes = new URLSearchParams(params);
-    const limpio = busqueda.trim();
+    const limpio = String(texto || '').trim();
     if (limpio) siguientes.set('q', limpio);
     else siguientes.delete('q');
     setParams(siguientes);
@@ -53,27 +57,26 @@ export default function Catalog() {
       <div className="container mt-4">
         <div className="buscador">
           <h2>Buscar Productos</h2>
-          <form onSubmit={enviarBusqueda} className="d-flex gap-2">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Nombre del producto"
-              value={busqueda}
-              onChange={(evento) => setBusqueda(evento.target.value)}
-              aria-label="Nombre del producto"
-            />
-            <button type="submit">Buscar</button>
-          </form>
+          <SearchBox
+            value={busqueda}
+            onChange={setBusqueda}
+            onSubmit={enviarBusqueda}
+            onSelect={(producto) => navigate(`/producto/${producto.id}`)}
+            products={products}
+            categories={CATEGORIES}
+            inputId="buscadorCatalogo"
+            placeholder="Nombre del producto"
+          />
         </div>
       </div>
 
       <section className="container mt-4">
         <div className="row g-4">
           {Object.entries(CATEGORIES).map(([clave, etiqueta]) => (
-            <div className="col-6 col-md-3" key={clave}>
+            <div className="col-12 col-sm-6" key={clave}>
               <button
                 type="button"
-                className="categoria-box w-100 border-0"
+                className="categoria-box"
                 onClick={() => cambiarCategoria(categoria === clave ? '' : clave)}
                 aria-pressed={categoria === clave}
               >

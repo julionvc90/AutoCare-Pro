@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="AutoCare Pro">
+  <rect width="600" height="600" fill="#0b0a08"/>
+  <rect x="24" y="24" width="552" height="552" fill="none" stroke="#d9b45c" stroke-opacity="0.22"/>
+  <g transform="translate(300 248)">
+    <rect x="-88" y="-88" width="176" height="176" fill="none" stroke="#d9b45c" stroke-width="4"/>
+    <line x1="-88" y1="-88" x2="88" y2="88" stroke="#d9b45c" stroke-width="10"/>
+  </g>
+  <text x="300" y="436" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" letter-spacing="10" fill="#d9b45c">AUTOCARE PRO</text>
+</svg>

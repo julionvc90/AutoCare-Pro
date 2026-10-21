@@ -23,10 +23,10 @@ export default function AdminLayout() {
     <div className="admin-layout">
       <aside className={`admin-sidebar${abierto ? ' abierto' : ''}`} id="menuLateral">
         <Link className="admin-marca" to="/admin/home">
-          <img src="/IMG/Logo.png" alt="AutoCare Pro" />
+          <span className="brand-mark" aria-hidden="true" />
           <span className="auto">AUTO</span>
           <span className="care">CARE</span>
-          <span className="pro">Pro</span>
+          <span className="pro">PRO</span>
         </Link>
 
         <nav className="admin-nav">

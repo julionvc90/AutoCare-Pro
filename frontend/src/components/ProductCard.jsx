@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { formatPrice } from '../utils/format';
 
-const FALLBACK = '/IMG/Logo.png';
+const FALLBACK = '/IMG/placeholder.svg';
 
 export default function ProductCard({ product, alAgregar }) {
   const { addProduct } = useCart();

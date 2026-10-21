@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import { useProducts } from '../context/ProductsContext';
 import { formatPrice } from '../utils/format';
 
-const FALLBACK = '/IMG/Logo.png';
+const FALLBACK = '/IMG/placeholder.svg';
 
 export default function CartPage() {
   const {

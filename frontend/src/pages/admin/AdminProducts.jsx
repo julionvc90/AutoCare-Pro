@@ -6,7 +6,7 @@ import Modal from '../../components/Modal';
 import { formatPrice } from '../../utils/format';
 
 const POR_PAGINA = 8;
-const FALLBACK = '/IMG/Logo.png';
+const FALLBACK = '/IMG/placeholder.svg';
 
 export default function AdminProducts() {
   const { products, categories, deleteProduct } = useProducts();

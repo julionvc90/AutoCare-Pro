@@ -1,15 +1,25 @@
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { CATALOG, CATEGORIES, DEFAULT_IMAGE } from '../data/products';
 import { readJSON, writeJSON } from '../utils/storage';
 
 const CLAVE_PRODUCTOS = 'productosAdmin';
+const CLAVE_VERSION = 'productosVersion';
+const CATALOG_VERSION = 2;
 const ProductsContext = createContext(null);
 
 export function ProductsProvider({ children }) {
   const [products, setProducts] = useState(() => {
+    const versionGuardada = readJSON(CLAVE_VERSION, 0);
     const guardados = readJSON(CLAVE_PRODUCTOS, null);
-    return Array.isArray(guardados) && guardados.length ? guardados : CATALOG;
+    if (versionGuardada === CATALOG_VERSION && Array.isArray(guardados) && guardados.length) {
+      return guardados;
+    }
+    return CATALOG;
   });
+
+  useEffect(() => {
+    writeJSON(CLAVE_VERSION, CATALOG_VERSION);
+  }, []);
 
   const persistir = (siguientes) => {
     setProducts(siguientes);

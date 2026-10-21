@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useProducts } from '../../context/ProductsContext';
 
-const FALLBACK = '/IMG/Logo.png';
+const FALLBACK = '/IMG/placeholder.svg';
 const MAX_IMAGEN = 300 * 1024;
 
 export default function AdminProductForm() {

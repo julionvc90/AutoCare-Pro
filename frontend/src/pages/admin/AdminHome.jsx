@@ -22,7 +22,7 @@ export default function AdminHome() {
   return (
     <>
       <section className="admin-card">
-        <h2 id="saludo" className="h4">¡HOLA {user.rol}!</h2>
+        <h2 id="saludo" className="h4">Hola, {user.nombre}</h2>
         <p className="text-secondary">Resumen general del taller y la tienda.</p>
         <div id="accesos" className="d-flex flex-wrap gap-2">
           <Link className="btn btn-sm btn-outline-light" to="/admin/productos">Administrar productos</Link>

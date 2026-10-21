@@ -18,7 +18,7 @@ export default function TopBar() {
         {user ? (
           <>
             <span className="btn-top-login">
-              <i className="fa-solid fa-user" aria-hidden="true" /> {user.nombre}
+              <i className="fa-solid fa-user" aria-hidden="true" /> <span className="top-label">{user.nombre}</span>
             </span>
             {esPersonal && (
               <Link className="btn-top-login" to="/admin/home">
@@ -31,7 +31,7 @@ export default function TopBar() {
           </>
         ) : (
           <Link className="btn-top-login" to="/login">
-            <i className="fa-solid fa-user" aria-hidden="true" /> Iniciar Sesión
+            <i className="fa-solid fa-user" aria-hidden="true" /> <span className="top-label">Iniciar Sesión</span>
           </Link>
         )}
 
@@ -43,7 +43,7 @@ export default function TopBar() {
           aria-controls="panelCarrito"
           onClick={toggleCart}
         >
-          <i className="fa-solid fa-cart-shopping" aria-hidden="true" /> Carrito
+          <i className="fa-solid fa-cart-shopping" aria-hidden="true" /> <span className="top-label">Carrito</span>
           <span className="cart-badge" id="contadorCarrito">
             {count}
           </span>

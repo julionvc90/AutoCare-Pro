@@ -6,7 +6,7 @@ import { useCart } from '../context/CartContext';
 import ProductCard from '../components/ProductCard';
 import { formatPrice } from '../utils/format';
 
-const FALLBACK = '/IMG/Logo.png';
+const FALLBACK = '/IMG/placeholder.svg';
 const MAXIMO_COMPRA = 10;
 
 export default function ProductDetail() {

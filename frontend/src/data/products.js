@@ -3,9 +3,12 @@ export const CATEGORIES = {
   detailing: 'Detailing & Limpieza',
   electricidad: 'Ampolletas & Electricidad',
   accesorios: 'Accesorios',
+  motor: 'Motor y Transmisión',
+  frenos: 'Frenos',
+  carroceria: 'Carrocería',
 };
 
-export const DEFAULT_IMAGE = '/IMG/Logo.png';
+export const DEFAULT_IMAGE = '/IMG/placeholder.svg';
 
 export const CATALOG = [
   {
@@ -127,5 +130,95 @@ export const CATALOG = [
     precio: 11990,
     stock: 16,
     imagen: '/IMG/cables.jpg',
+  },
+  {
+    id: 13,
+    categoria: 'motor',
+    nombre: 'Motor de Partida 12V 1.4 kW',
+    descripcion:
+      'Motor de arranque de 12V y 1.4 kW con piñón reforzado. Compatible con motores bencineros de 1.4 a 2.0 L. Reemplaza el arranque original sin modificaciones.',
+    precio: 89990,
+    stock: 10,
+    imagen: '/IMG/motor-partida.jpg',
+  },
+  {
+    id: 14,
+    categoria: 'motor',
+    nombre: 'Kit Correa de Distribución con Tensor',
+    descripcion:
+      'Correa de distribución de alta resistencia con tensor y rodamientos. Recomendado para la mantención preventiva según el kilometraje del fabricante.',
+    precio: 45990,
+    stock: 14,
+    imagen: '/IMG/correa-distribucion.jpg',
+  },
+  {
+    id: 15,
+    categoria: 'frenos',
+    nombre: 'Pastillas de Freno con Patines (Juego Delantero)',
+    descripcion:
+      'Juego de pastillas cerámicas con patines antivibración y clips de montaje. Baja generación de polvo y frenado silencioso.',
+    precio: 28990,
+    stock: 24,
+    imagen: '/IMG/pastillas-freno.jpg',
+  },
+  {
+    id: 16,
+    categoria: 'frenos',
+    nombre: 'Discos de Freno Ventilados (Par)',
+    descripcion:
+      'Par de discos ventilados de hierro fundido para mejor disipación del calor. Verifica el diámetro y el número de pernos de tu vehículo.',
+    precio: 74990,
+    stock: 12,
+    imagen: '/IMG/disco-freno.jpg',
+  },
+  {
+    id: 17,
+    categoria: 'frenos',
+    nombre: 'Tambores de Freno (Par)',
+    descripcion:
+      'Par de tambores de freno balanceados con superficie de fricción rectificada. Ideales para reemplazo por desgaste o ruido.',
+    precio: 58990,
+    stock: 9,
+    imagen: '/IMG/tambor-freno.jpg',
+  },
+  {
+    id: 18,
+    categoria: 'motor',
+    nombre: 'Kit de Embrague Completo (Disco, Prensa y Collarín)',
+    descripcion:
+      'Kit de embrague con disco, plato de presión y collarín de empuje. Restaura la transmisión de fuerza y suaviza el accionamiento del pedal.',
+    precio: 129990,
+    stock: 7,
+    imagen: '/IMG/embrague.jpg',
+  },
+  {
+    id: 19,
+    categoria: 'motor',
+    nombre: 'Set de Pistones con Anillos (4 unidades)',
+    descripcion:
+      'Set de 4 pistones con anillos de compresión y de aceite. Fabricados en aleación de aluminio para motores de 1.6 a 2.0 L.',
+    precio: 159990,
+    stock: 6,
+    imagen: '/IMG/pistones.jpg',
+  },
+  {
+    id: 20,
+    categoria: 'carroceria',
+    nombre: 'Parachoques Delantero',
+    descripcion:
+      'Parachoques delantero de ABS reforzado con soportes de montaje. Acabado listo para pintar según el color del vehículo.',
+    precio: 119990,
+    stock: 5,
+    imagen: '/IMG/parachoques-delantero.jpg',
+  },
+  {
+    id: 21,
+    categoria: 'carroceria',
+    nombre: 'Parachoques Trasero',
+    descripcion:
+      'Parachoques trasero de ABS reforzado con soportes y guías de montaje. Acabado listo para pintar.',
+    precio: 109990,
+    stock: 5,
+    imagen: '/IMG/parachoques-trasero.jpg',
   },
 ];

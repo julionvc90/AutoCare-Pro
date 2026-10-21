@@ -3,10 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/base.css';
-import './styles/admin.css';
-import './styles/blog.css';
-import './styles/contact.css';
+import './styles/theme.css';
 
 import { ProductsProvider } from './context/ProductsContext';
 import { CartProvider } from './context/CartContext';
