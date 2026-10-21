@@ -4,30 +4,16 @@
     {
       "type": "msedge",
       "request": "launch",
-      "name": "Depurar index.html (Edge · archivo local)",
-      "file": "${workspaceFolder}/index.html",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "type": "msedge",
-      "request": "launch",
-      "name": "Depurar index.html (Edge · Live Server)",
-      "url": "http://127.0.0.1:5500/index.html",
-      "webRoot": "${workspaceFolder}"
+      "name": "Depurar app React (Edge · Vite)",
+      "url": "http://127.0.0.1:5173/",
+      "webRoot": "${workspaceFolder}/frontend"
     },
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Depurar index.html (Chrome · archivo local)",
-      "file": "${workspaceFolder}/index.html",
-      "webRoot": "${workspaceFolder}"
-    },
-    {
-      "type": "chrome",
-      "request": "launch",
-      "name": "Depurar index.html (Chrome · Live Server)",
-      "url": "http://127.0.0.1:5500/index.html",
-      "webRoot": "${workspaceFolder}"
+      "name": "Depurar app React (Chrome · Vite)",
+      "url": "http://127.0.0.1:5173/",
+      "webRoot": "${workspaceFolder}/frontend"
     }
   ]
 }
