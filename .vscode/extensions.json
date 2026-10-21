@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "ritwickdey.LiveServer",
+    "esbenp.prettier-vscode",
+    "usernamehw.errorlens",
+    "mkaufman.HTMLHint",
+    "formulahendry.auto-rename-tag"
+  ]
+}

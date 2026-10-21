@@ -26,3 +26,21 @@ Diseño Adaptable en CSS: Separamos los estilos en distintas hojas para no mezcl
 Formularios Seguros: Todos los formularios incluyen validaciones nativas para asegurar que los campos obligatorios se completen y que los datos ingresados sean correctos.
 Cómo Probar la Página
 Para ver la página en funcionamiento solo debes descargar o clonar este repositorio y abrir el archivo index.html en cualquier navegador web.
+
+---
+
+## Migración a React (Evaluación Parcial 2)
+
+La versión React del proyecto (Vite + React Router + Bootstrap) vive en la carpeta **`frontend/`**:
+
+```bash
+cd frontend
+npm install
+npm run dev      # servidor de desarrollo
+npm test         # pruebas unitarias con Jasmine + Karma
+npm run build    # build de producción
+```
+
+- Plan de migración por fases: `PLAN.md`
+- Base del informe de la evaluación: `INFORME.md`
+- Guía técnica del frontend: `frontend/README.md`
