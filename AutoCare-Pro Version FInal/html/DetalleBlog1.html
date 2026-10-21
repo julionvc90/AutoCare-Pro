@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMG/technical_13191571.png" type="image/x-icon" sizes="32x32">
+  <title>AutoCare Pro - Cambio de aceite</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/3d3d423e08.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/Blogs.css">
+</head>
+<body>
+
+  <div class="top-bar-actions">
+    <div class="container d-flex justify-content-end align-items-center gap-3">
+      <a href="Login.html" class="btn-top-login">
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
+        <span>Iniciar Sesión</span>
+      </a>
+
+      <button class="btn-top-cart" type="button" id="btnCarrito" aria-expanded="false" aria-controls="panelCarrito">
+        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+        <span>Carrito</span>
+        <span class="cart-badge" id="contadorCarrito">0</span>
+      </button>
+
+      <div class="cart-panel" id="panelCarrito" hidden>
+        <div class="cart-panel-header">
+          <h2 class="h6 mb-0">Productos en tu carrito</h2>
+          <button type="button" class="cart-close" id="cerrarCarrito" aria-label="Cerrar carrito">&times;</button>
+        </div>
+
+        <div id="listaCarrito" class="cart-list">
+          <p class="cart-empty mb-0">El carrito está vacío.</p>
+        </div>
+
+        <div class="cart-panel-footer">
+          <span>Total:</span>
+          <strong id="totalCarrito">$0</strong>
+        </div>
+
+        <a href="Carrito.html" class="btn btn-success btn-sm w-100 mt-3">Ver carrito completo</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container">
+      <a class="brand-logo" href="index.html" aria-label="Ir al inicio de AutoCare Pro">
+        <img src="IMG/Logo.png" alt="AutoCare Pro" width="15%">
+        <span class="auto">AUTO</span>
+        <span class="care">CARE</span>
+        <span class="pro">Pro</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navTienda" aria-controls="navTienda" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navTienda">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="SobreNosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="Catalogo.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom active" href="Blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <nav class="detalle-breadcrumb" aria-label="Ruta de navegación">
+      <a href="index.html">Inicio</a> &rsaquo;
+      <a href="Blogs.html">Blogs</a> &rsaquo;
+      <span aria-current="page">Cambio de aceite</span>
+    </nav>
+
+    <article class="articulo">
+      <header>
+        <span class="blog-etiqueta">Mantenimiento</span>
+        <h1>¿Cada cuántos kilómetros debes cambiar el aceite del motor?</h1>
+        <p class="articulo-meta">
+          <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+          <time datetime="2026-09-10">10 de septiembre de 2026</time>
+          &middot;
+          <i class="fa-regular fa-clock" aria-hidden="true"></i> 4 min de lectura
+        </p>
+      </header>
+
+      <figure class="articulo-portada">
+        <img src="IMG/kit-mantenimiento.jpg" alt="Mecánico realizando un cambio de aceite bajo un vehículo elevado">
+      </figure>
+
+      <p class="articulo-intro">El aceite es la sangre del motor: lubrica, enfría y limpia las piezas internas. Con el tiempo pierde sus propiedades, y llegar tarde al cambio es una de las causas más comunes de desgaste prematuro. La pregunta es cuándo hacerlo.</p>
+
+      <h2>Los intervalos según el tipo de aceite</h2>
+      <p>El intervalo depende sobre todo del tipo de aceite que usa tu vehículo. Estos valores son orientativos para condiciones normales de uso:</p>
+
+      <div class="table-responsive">
+        <table class="table table-dark table-bordered align-middle articulo-tabla">
+          <thead>
+            <tr><th scope="col">Tipo de aceite</th><th scope="col">Cambio recomendado</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Mineral</th><td>Cada 3.000 a 5.000 km</td></tr>
+            <tr><th scope="row">Semisintético</th><td>Cada 5.000 a 7.500 km</td></tr>
+            <tr><th scope="row">Sintético</th><td>Cada 7.500 a 10.000 km</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="articulo-nota"><strong>Importante:</strong> el manual del fabricante siempre tiene la última palabra. Ahí encontrarás el tipo de aceite, la viscosidad (por ejemplo 5W-30) y el intervalo exacto para tu motor.</p>
+
+      <h2>Cuándo conviene cambiarlo antes</h2>
+      <p>Si tu uso se parece a alguno de estos casos, considera acortar el intervalo:</p>
+      <ul>
+        <li>Tráfico urbano con mucho "pare y siga".</li>
+        <li>Trayectos muy cortos, donde el motor no alcanza su temperatura normal.</li>
+        <li>Calles con mucho polvo o temperaturas extremas.</li>
+        <li>Transporte de carga pesada o remolque.</li>
+        <li>Vehículos con muchos kilómetros de uso.</li>
+      </ul>
+
+      <h2>Cómo revisar el nivel de aceite</h2>
+      <p>Puedes hacerlo tú mismo en pocos minutos, idealmente una vez al mes:</p>
+      <ol>
+        <li>Estaciona en una superficie plana y apaga el motor. Espera unos minutos para que el aceite baje al cárter.</li>
+        <li>Saca la varilla, límpiala con un paño y vuelve a insertarla hasta el fondo.</li>
+        <li>Retírala de nuevo y revisa que el nivel quede entre las marcas de mínimo y máximo.</li>
+        <li>Fíjate en el color: si está muy oscuro, espeso o con partículas, es momento de cambiarlo.</li>
+      </ol>
+
+      <h2>No olvides el filtro</h2>
+      <p>Cada cambio de aceite debe ir acompañado de un filtro de aceite nuevo; de lo contrario, el aceite limpio se contamina con los residuos del filtro viejo. Aprovecha también de revisar el filtro de aire, que influye directamente en el rendimiento y el consumo de combustible.</p>
+
+
+      <nav class="articulo-navegacion" aria-label="Otros artículos">
+        <a href="Blogs.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Volver a blogs</a>
+        <a href="DetalleBlog2.html">Siguiente: Cómo lavar tu auto sin dañar la pintura <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </nav>
+    </article>
+
+    <section class="seccion-espaciada" aria-labelledby="titulo-productos-blog">
+      <h2 id="titulo-productos-blog" class="titulo-seccion">Productos mencionados</h2>
+      <div class="row g-4 justify-content-center" id="productosBlog" data-productos="1,2,3"></div>
+    </section>
+  </main>
+
+  <footer class="text-center py-4 mt-5">
+    <p class="mb-0 small">© 2026 AutoCare Pro - Repuestos y Accesorios Automotrices</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/funciones.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

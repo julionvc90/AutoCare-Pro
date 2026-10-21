@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMG/technical_13191571.png" type="image/x-icon" sizes="32x32">
+  <title>AutoCare Pro - Blogs</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/3d3d423e08.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/Blogs.css">
+</head>
+<body>
+
+  <div class="top-bar-actions">
+    <div class="container d-flex justify-content-end align-items-center gap-3">
+      <a href="Login.html" class="btn-top-login">
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
+        <span>Iniciar Sesión</span>
+      </a>
+
+      <button class="btn-top-cart" type="button" id="btnCarrito" aria-expanded="false" aria-controls="panelCarrito">
+        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+        <span>Carrito</span>
+        <span class="cart-badge" id="contadorCarrito">0</span>
+      </button>
+
+      <div class="cart-panel" id="panelCarrito" hidden>
+        <div class="cart-panel-header">
+          <h2 class="h6 mb-0">Productos en tu carrito</h2>
+          <button type="button" class="cart-close" id="cerrarCarrito" aria-label="Cerrar carrito">&times;</button>
+        </div>
+
+        <div id="listaCarrito" class="cart-list">
+          <p class="cart-empty mb-0">El carrito está vacío.</p>
+        </div>
+
+        <div class="cart-panel-footer">
+          <span>Total:</span>
+          <strong id="totalCarrito">$0</strong>
+        </div>
+
+        <a href="Carrito.html" class="btn btn-success btn-sm w-100 mt-3">Ver carrito completo</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container">
+      <a class="brand-logo" href="index.html" aria-label="Ir al inicio de AutoCare Pro">
+        <img src="IMG/Logo.png" alt="AutoCare Pro" width="15%">
+        <span class="auto">AUTO</span>
+        <span class="care">CARE</span>
+        <span class="pro">Pro</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navTienda" aria-controls="navTienda" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navTienda">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="SobreNosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="Catalogo.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom active" href="Blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container seccion-espaciada">
+
+    <header class="page-header mb-5">
+      <div class="page-header-content">
+        <i class="fa-solid fa-newspaper page-header-icon" aria-hidden="true"></i>
+        <h1 class="titulo-seccion mb-0">Noticias importantes</h1>
+        <p class="page-header-subtitle">Consejos y datos útiles para mantener tu vehículo en óptimo estado</p>
+      </div>
+    </header>
+
+    <article class="blog-destacado" id="blog1">
+      <div class="row g-0">
+        <div class="col-12 col-lg-6 blog-texto">
+          <span class="blog-etiqueta">Mantenimiento</span>
+          <h2>¿Cada cuántos kilómetros debes cambiar el aceite del motor?</h2>
+          <p>Te explicamos los intervalos recomendados según el tipo de aceite y uso del vehículo.</p>
+          <a href="DetalleBlog1.html" class="btn btn-success fw-bold">Leer artículo</a>
+        </div>
+        <div class="col-12 col-lg-6 blog-imagen">
+          <img src="IMG/kit-mantenimiento.jpg" alt="Mecánico realizando un cambio de aceite bajo un vehículo elevado">
+        </div>
+      </div>
+    </article>
+
+    <article class="blog-destacado" id="blog2">
+      <div class="row g-0 flex-lg-row-reverse">
+        <div class="col-12 col-lg-6 blog-texto">
+          <span class="blog-etiqueta">Detailing</span>
+          <h2>Cómo lavar tu auto sin dañar la pintura: Guía paso a paso</h2>
+          <p>Consejos de detailing profesional para un lavado seguro y efectivo.</p>
+          <a href="DetalleBlog2.html" class="btn btn-success fw-bold">Leer artículo</a>
+        </div>
+        <div class="col-12 col-lg-6 blog-imagen blog-imagen-contain">
+          <img src="IMG/kit-limpieza.jpg" alt="Kit de limpieza para detailing automotriz con guante, cepillos y balde">
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="text-center py-4 mt-5">
+    <p class="mb-0 small">© 2026 AutoCare Pro - Repuestos y Accesorios Automotrices</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/funciones.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

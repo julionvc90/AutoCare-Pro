@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="IMG/technical_13191571.png" type="image/x-icon" sizes="32x32">
+  <title>AutoCare Pro - Lavado sin dañar la pintura</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/3d3d423e08.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/Blogs.css">
+</head>
+<body>
+
+  <div class="top-bar-actions">
+    <div class="container d-flex justify-content-end align-items-center gap-3">
+      <a href="Login.html" class="btn-top-login">
+        <i class="fa-solid fa-user" aria-hidden="true"></i>
+        <span>Iniciar Sesión</span>
+      </a>
+
+      <button class="btn-top-cart" type="button" id="btnCarrito" aria-expanded="false" aria-controls="panelCarrito">
+        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+        <span>Carrito</span>
+        <span class="cart-badge" id="contadorCarrito">0</span>
+      </button>
+
+      <div class="cart-panel" id="panelCarrito" hidden>
+        <div class="cart-panel-header">
+          <h2 class="h6 mb-0">Productos en tu carrito</h2>
+          <button type="button" class="cart-close" id="cerrarCarrito" aria-label="Cerrar carrito">&times;</button>
+        </div>
+
+        <div id="listaCarrito" class="cart-list">
+          <p class="cart-empty mb-0">El carrito está vacío.</p>
+        </div>
+
+        <div class="cart-panel-footer">
+          <span>Total:</span>
+          <strong id="totalCarrito">$0</strong>
+        </div>
+
+        <a href="Carrito.html" class="btn btn-success btn-sm w-100 mt-3">Ver carrito completo</a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+    <div class="container">
+      <a class="brand-logo" href="index.html" aria-label="Ir al inicio de AutoCare Pro">
+        <img src="IMG/Logo.png" alt="AutoCare Pro" width="15%">
+        <span class="auto">AUTO</span>
+        <span class="care">CARE</span>
+        <span class="pro">Pro</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navTienda" aria-controls="navTienda" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navTienda">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="SobreNosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="Catalogo.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom active" href="Blogs.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <nav class="detalle-breadcrumb" aria-label="Ruta de navegación">
+      <a href="index.html">Inicio</a> &rsaquo;
+      <a href="Blogs.html">Blogs</a> &rsaquo;
+      <span aria-current="page">Lavado sin dañar la pintura</span>
+    </nav>
+
+    <article class="articulo">
+      <header>
+        <span class="blog-etiqueta">Detailing</span>
+        <h1>Cómo lavar tu auto sin dañar la pintura: Guía paso a paso</h1>
+        <p class="articulo-meta">
+          <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+          <time datetime="2026-09-17">17 de septiembre de 2026</time>
+          &middot;
+          <i class="fa-regular fa-clock" aria-hidden="true"></i> 5 min de lectura
+        </p>
+      </header>
+
+      <figure class="articulo-portada articulo-portada-contain">
+        <img src="IMG/kit-limpieza.jpg" alt="Kit de limpieza para detailing automotriz con guante, cepillos y balde">
+      </figure>
+
+      <p class="articulo-intro">Un mal lavado puede dejar micro rayaduras y opacar el brillo de la pintura, aunque el auto quede "limpio". Con el método y los productos correctos, lavar tu vehículo en casa es seguro y muy efectivo.</p>
+
+      <h2>Paso a paso</h2>
+      <ol>
+        <li><strong>Elige el lugar.</strong> Lava a la sombra y con la carrocería fría. El sol seca el shampoo y deja manchas de agua.</li>
+        <li><strong>Prelava con agua.</strong> Enjuaga todo el vehículo para retirar polvo y barro suelto antes de tocar la pintura.</li>
+        <li><strong>Limpia primero las llantas.</strong> Son la zona más sucia; si las dejas para el final, salpicarás suciedad sobre lo que ya lavaste.</li>
+        <li><strong>Usa el método de los dos baldes.</strong> Uno con agua y shampoo, y otro con agua limpia para enjuagar el guante cada vez que lo cargues.</li>
+        <li><strong>Lava de arriba hacia abajo</strong> con movimientos rectos, no circulares. Las partes más bajas son las más sucias y se dejan para el final.</li>
+        <li><strong>Enjuaga con abundante agua</strong> sin dejar que el shampoo se seque sobre la pintura.</li>
+        <li><strong>Seca con microfibra,</strong> apoyando y arrastrando el paño con suavidad, sin frotar.</li>
+        <li><strong>Protege la pintura.</strong> Aplica cera cada dos o tres meses para mantener el brillo y facilitar los próximos lavados.</li>
+      </ol>
+
+      <h2>Errores comunes que dañan la pintura</h2>
+      <ul>
+        <li>Usar detergente de cocina: elimina la cera y deja la pintura sin protección.</li>
+        <li>Lavar con esponjas viejas o toallas ásperas, que arrastran suciedad y rayan.</li>
+        <li>Lavar bajo el sol directo o con la carrocería caliente.</li>
+        <li>Usar el mismo paño en las llantas y en la pintura.</li>
+      </ul>
+
+      <p class="articulo-nota"><strong>Consejo AutoCare:</strong> si un paño o guante se cae al suelo, no lo uses en la pintura hasta lavarlo bien. Un solo grano de arena puede dejar una rayadura.</p>
+
+
+      <nav class="articulo-navegacion" aria-label="Otros artículos">
+        <a href="DetalleBlog1.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Anterior: ¿Cada cuántos kilómetros cambiar el aceite?</a>
+        <a href="Blogs.html">Volver a blogs <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </nav>
+    </article>
+
+    <section class="seccion-espaciada" aria-labelledby="titulo-productos-blog">
+      <h2 id="titulo-productos-blog" class="titulo-seccion">Productos mencionados</h2>
+      <div class="row g-4 justify-content-center" id="productosBlog" data-productos="4,5,6"></div>
+    </section>
+  </main>
+
+  <footer class="text-center py-4 mt-5">
+    <p class="mb-0 small">© 2026 AutoCare Pro - Repuestos y Accesorios Automotrices</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/funciones.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
