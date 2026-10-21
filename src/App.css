@@ -1,0 +1,18 @@
+/* ============================================================
+   Único ajuste nuevo respecto al proyecto original.
+   styles.css hacía que <body> fuera una columna flex y que sus hijos
+   directos (.container / .admin-layout) crecieran para empujar el footer
+   al final. En React todo vive dentro de #root, así que se replica aquí
+   sin tocar styles.css.
+   ============================================================ */
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-height: 100vh;
+}
+
+#root > .container,
+#root > .admin-layout {
+  flex: 1 0 auto;
+}
