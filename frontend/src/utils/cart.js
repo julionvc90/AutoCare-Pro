@@ -75,17 +75,23 @@ export function calcularResumen(carrito, cupon) {
 }
 
 /** Construye el objeto de orden que se guarda al pagar. */
-export function crearOrden(carrito, usuario, cupon) {
+export function crearOrden(carrito, cliente, cupon, origen = 'cliente') {
   const resumen = calcularResumen(carrito, cupon);
   return {
     id: 'OC-' + Date.now(),
     fecha: new Date().toISOString(),
-    cliente: usuario.correo,
+    cliente: cliente.nombre || cliente.correo || 'Cliente',
+    correo: cliente.correo || '',
+    rut: cliente.rut || '',
+    telefono: cliente.telefono || '',
+    direccion: cliente.direccion || '',
     items: carrito,
     subtotal: resumen.subtotal,
     cupon: resumen.cupon,
     descuento: resumen.descuento,
     total: resumen.total,
     estado: 'Pendiente',
+    origen,
+    vendedor: cliente.vendedor || '',
   };
 }

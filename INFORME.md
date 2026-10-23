@@ -116,56 +116,25 @@ muestran el error junto al campo, marcando `is-invalid` / `campo-invalido`.
 ## 7. Pruebas unitarias (Jasmine + Karma)
 
 **Configuración:** `karma.conf.cjs` (Karma 6 + karma-jasmine + karma-webpack + Babel) y
-`babel.config.cjs` (preset-env + preset-react). Los specs son `src/**/*.spec.jsx`, se ejecutan en
+`babel.config.cjs` (preset-env + preset-react). Los specs viven en `test/**/*.spec.jsx`, se ejecutan en
 Chrome/Edge headless y se limpia `localStorage` antes y después de cada prueba.
 
-**Resultado:** **40 pruebas, todas exitosas (`TOTAL: 40 SUCCESS`).**
+**Resultado:** **10 pruebas, todas exitosas (`TOTAL: 10 SUCCESS`).**
 
-| # | Archivo / grupo | Caso de prueba |
+| # | Archivo | Caso de prueba |
 |---|---|---|
-| 1 | format | Formatea precio en CLP |
-| 2 | format | Devuelve `$0` con valor no numérico |
-| 3 | format | Separador de miles |
-| 4 | validation | RUT con DV correcto |
-| 5 | validation | RUT con DV incorrecto |
-| 6 | validation | RUT con formato inválido |
-| 7 | validation | Correo de dominios permitidos |
-| 8 | validation | Correo de dominio no permitido |
-| 9 | validation | Contraseña 4–10 |
-| 10 | validation | Contraseña fuera de rango |
-| 11 | validation | Teléfono válido |
-| 12 | validation | Teléfono inválido |
-| 13 | validation | Comentario requerido |
-| 14 | validation | Sugerencia de dominio (Levenshtein) |
-| 15 | cart | Resumen con cupón |
-| 16 | cart | Cupón inexistente se ignora |
-| 17 | cart | Agregar producto nuevo |
-| 18 | cart | Respeto del límite de stock |
-| 19 | cart | Sin unidades cuando ya está en el tope |
-| 20 | cart | Cantidad mínima 1 |
-| 21 | cart | Cantidad máxima por límite |
-| 22 | cart | Eliminar línea |
-| 23 | cart | Contar unidades |
-| 24 | ProductCard | Render de nombre y precio |
-| 25 | ProductCard | Clic en “Comprar” agrega al carrito |
-| 26 | ProductCard | Persistencia con espía de Jasmine |
-| 27 | Login | Correo vacío muestra error |
-| 28 | Login | Dominio no permitido muestra error |
-| 29 | App | Monta la portada |
-| 30 | App | Monta el catálogo |
-| 31 | App | Monta el detalle de un producto |
-| 32 | App | Monta el carrito vacío |
-| 33 | App | Monta el formulario de contacto |
-| 34 | App | Monta el panel admin con sesión |
-| 35 | App | Redirige a login sin sesión |
-| 36 | App | Monta el listado de productos del admin |
-| 37 | App | Monta el listado de órdenes del admin |
-| 38 | App | Monta el listado de usuarios del admin |
-| 39 | App | Monta el formulario de nuevo producto |
-| 40 | App | Monta el formulario de nuevo usuario |
+| 1 | `test/utils.spec.jsx` | Formatea un precio en pesos chilenos |
+| 2 | `test/utils.spec.jsx` | Acepta solo correos de dominios permitidos |
+| 3 | `test/utils.spec.jsx` | Exige una contraseña de 4 a 10 caracteres |
+| 4 | `test/utils.spec.jsx` | Calcula el total con un cupón de descuento |
+| 5 | `test/utils.spec.jsx` | No agrega más unidades que el stock disponible |
+| 6 | `test/utils.spec.jsx` | Cuenta el total de unidades del carrito |
+| 7 | `test/components.spec.jsx` | `ProductCard` muestra el nombre y el precio |
+| 8 | `test/components.spec.jsx` | `ProductCard` agrega el producto al carrito |
+| 9 | `test/components.spec.jsx` | `SearchBox` muestra sugerencias al escribir |
+| 10 | `test/app.spec.jsx` | La aplicación muestra la página de inicio |
 
-> Nota: las pruebas 24–35 manipulan el DOM real (render, clic y envío de formulario) en un navegador
-> headless.
+> Nota: las pruebas 7–10 manipulan el DOM real (render y clic) en un navegador headless.
 
 ---
 
@@ -176,14 +145,13 @@ Chrome/Edge headless y se limpia `localStorage` antes y después de cada prueba.
    detecta Chrome o Edge según el sistema.
 2. **Escritura de pruebas:** se separaron las funciones puras (`utils`) de los componentes. Cada
    `describe` agrupa un comportamiento y cada `it` valida un caso concreto.
-3. **Uso de mocks/espías:** en la prueba 26 se usa `spyOn(localStorage, 'setItem').and.callThrough()`
-   para verificar que el carrito se persiste, sin sustituir el comportamiento real.
-4. **Análisis de resultados:** `npm test` informa pruebas ejecutadas y fallidas; el equipo revisó los
-   mensajes de React sobre `act` y los eliminó configurando `IS_REACT_ACT_ENVIRONMENT` y usando
-   `act` desde `react`.
-5. **Cobertura funcional:** carrito (agregar, tope, cantidades, eliminar, cupones, totales),
-   validaciones (RUT, correo, contraseña, teléfono, comentario), formato de precios y componentes
-   de tienda/login.
+3. **Pruebas simples:** cada `it` valida una sola idea y tiene un nombre descriptivo. No se usan
+   mocks ni espías: se prueban las funciones reales y, en los componentes, se revisa el texto o el
+   clic directamente sobre el DOM.
+4. **Análisis de resultados:** `npm test` informa las 10 pruebas ejecutadas; la salida queda limpia,
+   sin advertencias, y el equipo puede explicar qué valida cada una.
+5. **Cobertura funcional:** precio en CLP, correo, contraseña, cupón, stock, unidades del carrito,
+   render y clic de una tarjeta, sugerencias del buscador y render de la página de inicio.
 
 ---
 

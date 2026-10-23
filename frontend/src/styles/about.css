@@ -1,0 +1,84 @@
+/* about.css — AutoCare Pro (Neo Kinpaku) */
+/* Nosotros */
+.info-company-card,
+.company-focus-card,
+.company-categories-card,
+.company-value-card {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  padding: clamp(24px, 3vw, 36px) 0;
+}
+
+.info-company-card h2,
+.company-focus-card h2,
+.company-categories-card h2 {
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  margin-bottom: 16px;
+}
+
+.info-company-card p,
+.company-value-card p,
+.focus-item p {
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.info-company-icon,
+.company-value-icon {
+  display: none;
+}
+
+.company-value-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.focus-item {
+  padding: 18px 0;
+  border-top: 1px solid var(--rule);
+}
+
+.focus-item > i {
+  display: none;
+}
+
+.focus-item h4 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.mini-category {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--rule);
+  color: var(--champagne);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 300;
+}
+
+.mini-category i {
+  display: none;
+}
+
+.mini-category::after {
+  content: '→';
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--gold);
+}
+
+.mini-category:hover {
+  color: var(--gold);
+}
+

@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext';
 const MENU = [
   { to: '/admin/home', label: 'Dashboard', icono: 'fa-gauge', roles: ['ADMINISTRADOR', 'VENDEDOR'] },
   { to: '/admin/productos', label: 'Productos', icono: 'fa-box', roles: ['ADMINISTRADOR', 'VENDEDOR'] },
+  { to: '/admin/venta', label: 'Nueva venta', icono: 'fa-cash-register', roles: ['ADMINISTRADOR', 'VENDEDOR'] },
   { to: '/admin/ordenes', label: 'Órdenes', icono: 'fa-receipt', roles: ['ADMINISTRADOR', 'VENDEDOR'] },
   { to: '/admin/usuarios', label: 'Usuarios', icono: 'fa-users', roles: ['ADMINISTRADOR'] },
 ];

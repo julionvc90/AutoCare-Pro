@@ -17,7 +17,7 @@ La aplicación está en la carpeta **`frontend/`** y usa **Vite + React 18 + Rea
 cd frontend
 npm install
 npm run dev      # servidor de desarrollo (http://localhost:5173)
-npm test         # 40 pruebas unitarias con Jasmine + Karma
+npm test         # 10 pruebas unitarias con Jasmine + Karma
 npm run build    # build de producción (frontend/dist)
 ```
 
@@ -25,15 +25,17 @@ npm run build    # build de producción (frontend/dist)
 
 ```
 frontend/src/
-├── components/   # Layout, Navbar, TopBar, Footer, CartPanel, ProductCard, Modal, AdminLayout…
+├── components/   # Layout, Navbar, TopBar, Footer, CartPanel, ProductCard, SearchBox, Receipt, AdminLayout…
 ├── context/      # ProductsContext, CartContext, AuthContext
 ├── data/         # catálogo, usuarios, regiones y órdenes de ejemplo
 ├── pages/        # páginas públicas
-│   └── admin/    # dashboard, productos, órdenes y usuarios
-├── styles/       # CSS del proyecto
-├── utils/        # carrito, validaciones, formato y almacenamiento (+ pruebas)
+│   └── admin/    # dashboard, productos, nueva venta, órdenes y usuarios
+├── styles/       # un CSS por interfaz (home, catalog, product, cart, blog, contact, about, login, admin…) + base/layout/responsive
+├── utils/        # carrito, validaciones, formato y almacenamiento
 ├── App.jsx       # definición de rutas
 └── main.jsx      # providers y arranque
+
+frontend/test/    # 10 pruebas simples con Jasmine + Karma
 ```
 
 ### Documentación

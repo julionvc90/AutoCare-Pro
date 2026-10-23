@@ -63,21 +63,21 @@ Máximo 5 intentos fallidos consecutivos.
 
 ## Pruebas unitarias
 
-La suite vive en `src/**/*.spec.jsx` y se ejecuta con **Karma + Jasmine**:
+La suite vive en la carpeta **`test/`** y se ejecuta con **Karma + Jasmine**:
 
 | Archivo | Qué valida |
 |---|---|
-| `utils/format.spec.jsx` | Formato de precios CLP y casos inválidos |
-| `utils/validation.spec.jsx` | RUT, correo, contraseña, teléfono, comentario y sugerencia de dominio |
-| `utils/cart.spec.jsx` | Resumen con cupón, topes de stock, cantidades, eliminar y contar |
-| `components/ProductCard.spec.jsx` | Render de nombre/precio, clic en “Comprar”, persistencia con espía de Jasmine |
-| `pages/Login.spec.jsx` | Validación del formulario: correo vacío y dominio no permitido |
-| `App.spec.jsx` | Montaje (smoke) de portada, catálogo, detalle, carrito, contacto, panel admin y formularios admin |
+| `test/utils.spec.jsx` | Precio en CLP, correo, contraseña, cupón, stock y unidades |
+| `test/components.spec.jsx` | `ProductCard` (render y clic) y sugerencias de `SearchBox` |
+| `test/app.spec.jsx` | Que la aplicación muestre la página de inicio |
 
-Total: **40 pruebas**, todas en verde.
+Total: **10 pruebas**, todas en verde.
 
 ## Notas
 
 - Toda la persistencia es **del lado del cliente** (localStorage), igual que el proyecto original.
 - El stock es informativo: el carrito lo respeta, pero el checkout no descuenta unidades.
-- El panel de órdenes muestra las órdenes demo más las generadas por el checkout real.
+- Al pagar se genera una **boleta** en `/boleta/:id` con los datos del cliente y el detalle de la compra.
+- El vendedor puede registrar una venta desde **`/admin/venta`**: ingresa los datos del cliente, agrega
+  productos y obtiene la misma boleta.
+- El panel de órdenes muestra las órdenes demo más las generadas por el checkout y por el vendedor.

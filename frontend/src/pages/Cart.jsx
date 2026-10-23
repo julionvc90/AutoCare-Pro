@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useProducts } from '../context/ProductsContext';
@@ -21,6 +21,7 @@ export default function CartPage() {
   } = useCart();
   const { user } = useAuth();
   const { products } = useProducts();
+  const navigate = useNavigate();
 
   const imagenDe = (nombre) => products.find((producto) => producto.nombre === nombre)?.imagen || FALLBACK;
 
@@ -38,8 +39,7 @@ export default function CartPage() {
   const pagar = () => {
     const resultado = checkout(user);
     if (resultado.ok) {
-      setMensaje(`¡Compra realizada! Tu número de orden es ${resultado.orden.id}. Total pagado: ${formatPrice(resultado.total)}.`);
-      setTipo('exito');
+      navigate(`/boleta/${resultado.orden.id}`);
       return;
     }
     setMensaje(resultado.message);

@@ -1,0 +1,190 @@
+/* catalog.css — AutoCare Pro (Neo Kinpaku) */
+/* ============================================================
+   CATEGORÍAS (índice tipográfico, sin tarjetas)
+   ============================================================ */
+.categoria-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  background: transparent;
+  color: var(--champagne);
+  text-align: left;
+  text-decoration: none;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.categoria-box i {
+  display: none;
+}
+
+.categoria-box span {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+.categoria-box::after {
+  content: '→';
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--gold);
+  transition: transform 0.25s var(--ease);
+}
+
+.categoria-box:hover {
+  color: var(--gold);
+  border-color: var(--rule-strong);
+}
+
+.categoria-box:hover::after {
+  transform: translateX(4px);
+}
+
+[aria-pressed='true'].categoria-box {
+  color: var(--gold);
+}
+
+/* ============================================================
+   PRODUCTOS
+   ============================================================ */
+.card {
+  background: var(--raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  color: var(--text);
+}
+
+.card-producto {
+  overflow: hidden;
+  transition: transform 0.28s var(--ease), border-color 0.28s var(--ease);
+}
+
+.card-producto:hover {
+  transform: translateY(-3px);
+  border-color: var(--rule-strong);
+}
+
+.card-producto-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(160px, 16vw, 210px);
+  background: #f6f4ef;
+  overflow: hidden;
+}
+
+.card-producto-img a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+}
+
+.card-producto-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0;
+}
+
+.card-producto .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+}
+
+.card-producto .card-title {
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--champagne);
+  margin: 0;
+}
+
+.card-producto .card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.card-producto .precio {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--gold);
+}
+
+.card-producto .btn {
+  margin-top: auto;
+  width: 100%;
+}
+
+
+/* ============================================================
+   BUSCADOR DEL CATÁLOGO
+   ============================================================ */
+.buscador {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+
+.buscador h2 {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.buscador form {
+  flex: 1 1 320px;
+}
+
+.buscador input {
+  flex: 1;
+  height: 44px;
+  background: var(--graphite);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  color: var(--champagne);
+  padding-inline: 14px;
+}
+
+.buscador .input-group > .btn {
+  height: 44px;
+  padding-inline: 22px;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-weight: 600;
+}
+

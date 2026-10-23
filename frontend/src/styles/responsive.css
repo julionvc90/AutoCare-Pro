@@ -1,0 +1,112 @@
+/* responsive.css — AutoCare Pro (Neo Kinpaku) */
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 991.98px) {
+  .navbar-custom .navbar-collapse {
+    margin-top: 14px;
+    padding: 14px;
+    background: var(--lacquer-deep);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius-sm);
+  }
+
+  .navbar-nav {
+    gap: 4px;
+  }
+
+  .nav-link-custom {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .admin-sidebar {
+    position: fixed;
+    left: -270px;
+    top: 0;
+    z-index: 1040;
+    transition: left 0.3s var(--ease);
+  }
+
+  .admin-sidebar.abierto {
+    left: 0;
+  }
+
+  .carrito-resumen {
+    position: static;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .banner-kit-con-imagen {
+    flex-direction: column;
+  }
+
+  .banner-kit-imagen {
+    flex-basis: 200px;
+  }
+
+  .carrito-item {
+    grid-template-columns: 64px minmax(0, 1fr) auto;
+    grid-template-areas:
+      'img info remove'
+      'img qty subtotal';
+    gap: 10px 14px;
+    align-items: center;
+  }
+
+  .carrito-item img {
+    grid-area: img;
+    width: 64px;
+    height: 64px;
+  }
+
+  .carrito-item-info {
+    grid-area: info;
+  }
+
+  .carrito-cantidad {
+    grid-area: qty;
+  }
+
+  .carrito-subtotal {
+    grid-area: subtotal;
+    text-align: right;
+  }
+
+  .carrito-eliminar {
+    grid-area: remove;
+    justify-self: end;
+  }
+
+  .blog-texto {
+    padding-block: 20px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-search h1 {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
+  }
+
+  .top-bar-actions > .container {
+    gap: 12px;
+  }
+
+  .btn-top-login,
+  .btn-top-cart {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+

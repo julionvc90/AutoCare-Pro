@@ -1,0 +1,417 @@
+/* base.css — AutoCare Pro (Neo Kinpaku) */
+/* ============================================================
+   AUTOCARE PRO — NEO KINPAKU
+   Sistema visual: laca oscura cálida, oro kinpaku y pátina.
+   Tipografía: Alumni Sans (display), Albert Sans (texto),
+   Roboto Mono (etiquetas y datos).
+   Bootstrap se conserva para grilla y responsividad; aquí se
+   redefine la piel completa.
+   ============================================================ */
+
+:root {
+  /* Superficies */
+  --lacquer: oklch(7% 0.006 95);
+  --lacquer-deep: oklch(4% 0.004 95);
+  --raised: oklch(11% 0.006 95);
+  --graphite: oklch(15% 0.008 95);
+  --graphite-2: oklch(19% 0.008 95);
+
+  /* Acentos */
+  --gold: oklch(84% 0.19 80.46);
+  --gold-rich: oklch(77% 0.13 82);
+  --gold-pale: oklch(86% 0.07 84);
+  --gold-deep: oklch(61% 0.085 78);
+  --patina: oklch(70% 0.12 188);
+  --patina-pale: oklch(82% 0.07 188);
+  --patina-deep: oklch(49% 0.08 188);
+  --vermilion: oklch(58% 0.15 35);
+  --success: oklch(78% 0.13 150);
+
+  /* Texto */
+  --champagne: oklch(91% 0 0);
+  --text: oklch(88% 0 0);
+  --muted: oklch(72% 0 0);
+  --faint: oklch(62% 0 0);
+  --ink: oklch(14% 0.018 95);
+
+  /* Líneas */
+  --rule: oklch(78% 0 0 / 0.16);
+  --rule-strong: oklch(74% 0.09 82 / 0.6);
+
+  /* Tipografía */
+  --font-display: 'Alumni Sans', 'Albert Sans', 'Arial Narrow', sans-serif;
+  --font-body: 'Albert Sans', 'Avenir Next', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --font-mono: 'Roboto Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* Ritmo y forma */
+  --maxw: 1320px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --radius: 6px;
+  --radius-sm: 4px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Bootstrap */
+  --bs-body-bg: var(--lacquer);
+  --bs-body-color: var(--text);
+  --bs-border-color: var(--rule);
+  --bs-primary: var(--gold);
+  --bs-success: var(--gold);
+  --bs-link-color: var(--gold);
+  --bs-link-hover-color: var(--gold-pale);
+  --bs-font-sans-serif: var(--font-body);
+  --bs-body-font-family: var(--font-body);
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--lacquer);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-width: 320px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Superficies del navegador: selección, cursor, scrollbar, foco */
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--graphite-2) var(--lacquer-deep);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lacquer-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--graphite-2);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--patina);
+  outline-offset: 3px;
+}
+
+input,
+textarea,
+select {
+  caret-color: var(--gold);
+}
+
+/* Tipografía */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--champagne);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: clamp(2.8rem, 6.5vw, 5.6rem);
+}
+
+h2 {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--gold);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--gold-pale);
+}
+
+strong {
+  color: var(--champagne);
+  font-weight: 600;
+}
+
+small {
+  color: var(--muted);
+}
+
+.container {
+  max-width: var(--maxw);
+  padding-inline: var(--gutter);
+}
+
+.text-secondary {
+  color: var(--muted) !important;
+}
+
+.text-white {
+  color: var(--champagne) !important;
+}
+
+.text-reset {
+  color: inherit !important;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+
+/* ============================================================
+   SECCIONES Y TITULARES
+   ============================================================ */
+.titulo-seccion {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  letter-spacing: -0.01em;
+  line-height: 1.04;
+  margin-bottom: 1.6rem;
+  text-align: left;
+}
+
+.seccion-espaciada {
+  margin-block: clamp(56px, 8vw, 104px);
+}
+
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+.btn {
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 10px 20px;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease),
+    border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.45;
+  transform: none;
+}
+
+.btn-success,
+.btn-primary {
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: var(--ink);
+}
+
+.btn-success:hover,
+.btn-primary:hover {
+  background: var(--gold-pale);
+  border-color: var(--gold-pale);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.btn-outline-success,
+.btn-outline-light {
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  color: var(--gold);
+}
+
+.btn-outline-success:hover,
+.btn-outline-light:hover {
+  background: oklch(84% 0.19 80.46 / 0.1);
+  border-color: var(--gold);
+  color: var(--gold-pale);
+}
+
+.btn-outline-danger {
+  background: transparent;
+  border: 1px solid oklch(58% 0.15 35 / 0.5);
+  color: var(--vermilion);
+}
+
+.btn-outline-danger:hover {
+  background: oklch(58% 0.15 35 / 0.12);
+  border-color: var(--vermilion);
+  color: var(--vermilion);
+}
+
+.btn-link {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  color: var(--gold-pale);
+}
+
+/* ============================================================
+   FORMULARIOS
+   ============================================================ */
+.form-label,
+.form-grupo label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.form-control,
+.form-select,
+.form-grupo input,
+.form-grupo textarea {
+  background: var(--graphite);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  color: var(--champagne);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 12px 14px;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.form-control::placeholder,
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder {
+  color: var(--faint);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+  background: var(--graphite);
+  border-color: var(--gold);
+  color: var(--champagne);
+  box-shadow: 0 0 0 3px oklch(70% 0.12 188 / 0.16);
+  outline: none;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23d8b45a' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid,
+.campo-invalido {
+  border-color: var(--vermilion);
+}
+
+.form-control.is-valid,
+.campo-valido {
+  border-color: var(--patina-deep);
+}
+
+.invalid-feedback,
+.text-danger,
+.campo-error {
+  color: var(--vermilion) !important;
+  font-size: 0.8rem;
+}
+
+.form-text,
+.campo-ayuda {
+  color: var(--faint);
+  font-size: 0.78rem;
+}
+
+.contador {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+}
+
+.contador.excedido {
+  color: var(--vermilion);
+}
+
+
+/* ============================================================
+   AJUSTES DE INTEGRACIÓN
+   ============================================================ */
+
+.container {
+  width: 100%;
+}
+
+/* Font Awesome inserta <svg>; los iconos decorativos se ocultan */
+.categoria-box svg,
+.contacto-icono svg,
+.focus-item svg,
+.mini-category svg,
+.info-company-icon svg,
+.company-value-icon svg,
+.page-header-icon svg {
+  display: none;
+}
+
+.admin-link svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gold-deep);
+}
+
+.admin-link.activo svg {
+  color: var(--gold);
+}
+
+.kpi svg {
+  width: 20px;
+  height: 20px;
+  color: var(--gold);
+}
+

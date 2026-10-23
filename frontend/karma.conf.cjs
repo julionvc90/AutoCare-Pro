@@ -35,9 +35,9 @@ module.exports = function (config) {
     client: {
       clearContext: false,
     },
-    files: [{ pattern: 'src/**/*.spec.jsx', watched: false }],
+    files: [{ pattern: 'test/**/*.spec.jsx', watched: false }],
     preprocessors: {
-      'src/**/*.spec.jsx': ['webpack'],
+      'test/**/*.spec.jsx': ['webpack'],
     },
     webpack: {
       mode: 'development',

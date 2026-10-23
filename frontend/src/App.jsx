@@ -22,6 +22,8 @@ import AdminProductForm from './pages/admin/AdminProductForm';
 import AdminOrders from './pages/admin/AdminOrders';
 import AdminUsers from './pages/admin/AdminUsers';
 import AdminUserForm from './pages/admin/AdminUserForm';
+import AdminSale from './pages/admin/AdminSale';
+import ReceiptPage from './pages/Receipt';
 
 const STAFF = ['ADMINISTRADOR', 'VENDEDOR'];
 const ADMIN_ONLY = ['ADMINISTRADOR'];
@@ -40,6 +42,7 @@ export default function App() {
         <Route path="/blogs/lavado-sin-danar" element={<BlogDetail2 />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/boleta/:id" element={<ReceiptPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 
@@ -57,6 +60,7 @@ export default function App() {
         <Route path="productos/nuevo" element={<AdminProductForm />} />
         <Route path="productos/:id/editar" element={<AdminProductForm />} />
         <Route path="ordenes" element={<AdminOrders />} />
+        <Route path="venta" element={<AdminSale />} />
         <Route
           path="usuarios"
           element={

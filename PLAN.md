@@ -43,25 +43,26 @@ Bootstrap, con carrito ya implementado) **integrando un framework moderno de fro
 
 ```
 AutoCare-Pro/
-├── frontend/                  # App React (nueva)
-│   ├── public/IMG/            # Imágenes (copiadas del proyecto original)
+├── frontend/
+│   ├── public/IMG/            # imágenes de producto y marca
 │   ├── src/
-│   │   ├── components/        # Layout, Navbar, TopBar, Footer, CartPanel, ProductCard, Modal, AdminLayout…
+│   │   ├── components/        # Layout, Navbar, ProductCard, SearchBox, Receipt, AdminLayout…
 │   │   ├── context/           # ProductsContext, CartContext, AuthContext
 │   │   ├── data/              # products.js, users.js, regions.js, orders.js
-│   │   ├── pages/             # Home, Catalog, ProductDetail, Cart, Login, About, Blogs, Contact…
-│   │   │   └── admin/         # AdminHome, AdminProducts, AdminProductForm, AdminOrders, AdminUsers, AdminUserForm
-│   │   ├── styles/            # base.css, admin.css, blog.css, contact.css (del proyecto original)
-│   │   ├── utils/             # cart.js, validation.js, format.js, storage.js (+ *.spec.jsx)
-│   │   ├── App.jsx            # Rutas
-│   │   └── main.jsx           # Providers + arranque
+│   │   ├── pages/             # Home, Catalog, ProductDetail, Cart, Login, About, Blogs, Contact, Receipt…
+│   │   │   └── admin/         # AdminHome, AdminProducts, AdminSale, AdminOrders, AdminUsers…
+│   │   ├── styles/            # base, layout, home, catalog, product, cart, blog, contact, about, login, admin, receipt, responsive
+│   │   ├── utils/             # cart.js, validation.js, format.js, storage.js
+│   │   ├── App.jsx            # rutas
+│   │   └── main.jsx           # providers + arranque
+│   ├── test/                  # 10 pruebas simples (Jasmine + Karma)
 │   ├── babel.config.cjs
 │   ├── karma.conf.cjs
 │   ├── vite.config.js
 │   └── package.json
-├── *.html, css/, js/, IMG/    # Plantilla original (se conserva como referencia)
-├── PLAN.md                    # Este documento
-└── INFORME.md                 # Guía del informe de la evaluación
+├── requerimientos_fullstack.xlsx
+├── PLAN.md
+└── INFORME.md
 ```
 
 ---
@@ -78,10 +79,10 @@ AutoCare-Pro/
 | 5 | Carrito con Context + localStorage (topes por stock, cupones, checkout) | ✅ |
 | 6 | Autenticación (roles, intentos, dominios permitidos, sesión) | ✅ |
 | 7 | Panel admin (dashboard, productos CRUD, órdenes, usuarios CRUD) | ✅ |
-| 8 | Pruebas unitarias Jasmine + Karma | ✅ **40 pruebas en verde** |
+| 8 | Pruebas unitarias Jasmine + Karma | ✅ **10 pruebas en verde** |
 | 9 | Documentación (README, informe, plan) | ✅ |
 | 10 | Verificación: `vite build` + `karma start` | ✅ |
-| 11 | Commit y push a `origin/vicente-4` | ⏳ Pendiente (a pedido del usuario) |
+| 11 | Commit y push a `origin/vicente-4` | ✅ (`39eca2e`) |
 
 ---
 
@@ -119,7 +120,7 @@ AutoCare-Pro/
 |---|---|
 | **IE2.1.1** Proyecto con framework JS bien estructurado | `frontend/` con Vite + React + Router; estructura por capas (components/context/data/pages/utils) |
 | **IE2.1.2** Componentes con props/estado + responsive Bootstrap | `ProductCard` (props), `Catalog`/`Cart` (estado), `AdminProductForm` (estado de formulario); rejilla Bootstrap `col-12 col-sm-6 col-md-4 col-lg-3`, navbar colapsable, panel admin off-canvas |
-| **IE2.2.1** Pruebas unitarias Jasmine + Karma | `src/**/*.spec.jsx` (40 pruebas), `karma.conf.cjs`, `babel.config.cjs` |
+| **IE2.2.1** Pruebas unitarias Jasmine + Karma | `test/**/*.spec.jsx` (10 pruebas), `karma.conf.cjs`, `babel.config.cjs` |
 | **IE2.3.1** Proceso de testeo (entorno, escritura, mocks, análisis) | Entorno Karma + webpack + Babel; `spyOn(localStorage, 'setItem')` como mock/espía; sección 7 del `INFORME.md` |
 | **IE2.1.3 / IE2.1.4** Exposición del diseño y del desarrollo | `INFORME.md` secciones 2–5 |
 | **IE2.2.2 / IE2.3.2** Demostración y explicación de pruebas | `INFORME.md` secciones 7–8 + `npm test` en vivo |
