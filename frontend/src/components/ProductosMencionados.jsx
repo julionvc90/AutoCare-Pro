@@ -1,3 +1,4 @@
+// ProductosMencionados: productos relacionados dentro de un articulo.
 import { useProducts } from '../context/ProductsContext';
 import ProductCard from './ProductCard';
 

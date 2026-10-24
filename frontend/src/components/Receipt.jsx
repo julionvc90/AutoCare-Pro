@@ -1,3 +1,4 @@
+// Receipt: boleta con datos del cliente, productos y totales.
 import { formatPrice } from '../utils/format';
 
 export default function Receipt({ orden }) {

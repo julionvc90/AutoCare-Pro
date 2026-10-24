@@ -1,3 +1,4 @@
+// ProductCard: tarjeta con imagen, nombre, precio y boton de compra.
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { formatPrice } from '../utils/format';

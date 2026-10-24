@@ -1,3 +1,4 @@
+// BlogDetail2: articulo sobre el lavado del auto.
 import { Link } from 'react-router-dom';
 import ProductosMencionados from '../components/ProductosMencionados';
 

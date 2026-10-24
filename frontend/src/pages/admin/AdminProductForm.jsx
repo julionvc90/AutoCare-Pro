@@ -1,3 +1,4 @@
+// AdminProductForm: formulario para crear o editar productos.
 import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useProducts } from '../../context/ProductsContext';

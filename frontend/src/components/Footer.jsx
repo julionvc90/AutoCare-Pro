@@ -1,3 +1,4 @@
+// Footer: pie de pagina con el copyright.
 export default function Footer() {
   return (
     <footer className="text-center py-4 mt-5">

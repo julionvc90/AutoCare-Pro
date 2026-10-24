@@ -1,3 +1,4 @@
+// AdminUserForm: formulario para crear o editar usuarios.
 import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';

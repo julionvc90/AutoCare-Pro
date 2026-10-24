@@ -1,3 +1,4 @@
+// Modal: ventana emergente reutilizable.
 export default function Modal({ abierto, titulo, onCerrar, children, pie }) {
   if (!abierto) return null;
 

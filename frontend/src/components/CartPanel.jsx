@@ -1,3 +1,4 @@
+// CartPanel: panel desplegable con los productos del carrito.
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { formatPrice } from '../utils/format';

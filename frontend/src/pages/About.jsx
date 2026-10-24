@@ -1,3 +1,4 @@
+// About: informacion de la empresa, mision y vision.
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 

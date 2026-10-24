@@ -1,3 +1,4 @@
+// App: define las rutas publicas y las del panel de administracion.
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import Layout from './components/Layout';

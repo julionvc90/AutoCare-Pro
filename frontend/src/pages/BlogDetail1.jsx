@@ -1,3 +1,4 @@
+// BlogDetail1: articulo sobre el cambio de aceite.
 import { Link } from 'react-router-dom';
 import ProductosMencionados from '../components/ProductosMencionados';
 

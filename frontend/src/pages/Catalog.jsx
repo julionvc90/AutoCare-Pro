@@ -1,3 +1,4 @@
+// Catalog: catalogo con buscador, filtros y grilla de productos.
 import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { CATEGORIES } from '../data/products';

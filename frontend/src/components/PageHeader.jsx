@@ -1,3 +1,4 @@
+// PageHeader: encabezado reutilizable para paginas internas.
 export default function PageHeader({ titulo, subtitulo, children }) {
   return (
     <header className="page-header container">

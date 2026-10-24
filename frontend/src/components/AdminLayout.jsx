@@ -1,3 +1,4 @@
+// AdminLayout: estructura del panel con menu lateral y contenido.
 import { useState } from 'react';
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';

@@ -1,3 +1,4 @@
+// ProtectedRoute: protege rutas segun la sesion y el rol.
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 

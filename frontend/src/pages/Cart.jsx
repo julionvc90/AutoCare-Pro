@@ -1,3 +1,4 @@
+// Cart: carrito con cantidades, cupon, total y pago.
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';

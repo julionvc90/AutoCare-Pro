@@ -1,3 +1,4 @@
+// TopBar: barra superior con sesion, panel y boton del carrito.
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';

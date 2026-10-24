@@ -1,3 +1,4 @@
+// AdminOrders: listado de ordenes con detalle.
 import { useState } from 'react';
 import { COLOR_ESTADO, ORDENES_DEMO, totalOrden } from '../../data/orders';
 import { readJSON } from '../../utils/storage';

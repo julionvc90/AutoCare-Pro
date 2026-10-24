@@ -1,3 +1,4 @@
+// SearchBox: buscador con sugerencias de productos.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { formatPrice } from '../utils/format';
 

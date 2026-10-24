@@ -1,3 +1,4 @@
+// Home: portada con hero, promociones, categorias, productos y blog.
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { CATEGORIES } from '../data/products';

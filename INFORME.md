@@ -129,12 +129,12 @@ Chrome/Edge headless y se limpia `localStorage` antes y después de cada prueba.
 | 4 | `test/utils.spec.jsx` | Calcula el total con un cupón de descuento |
 | 5 | `test/utils.spec.jsx` | No agrega más unidades que el stock disponible |
 | 6 | `test/utils.spec.jsx` | Cuenta el total de unidades del carrito |
-| 7 | `test/components.spec.jsx` | `ProductCard` muestra el nombre y el precio |
-| 8 | `test/components.spec.jsx` | `ProductCard` agrega el producto al carrito |
-| 9 | `test/components.spec.jsx` | `SearchBox` muestra sugerencias al escribir |
-| 10 | `test/app.spec.jsx` | La aplicación muestra la página de inicio |
+| 7 | `test/utils.spec.jsx` | Elimina un producto del carrito |
+| 8 | `test/utils.spec.jsx` | No permite una cantidad menor a 1 |
+| 9 | `test/utils.spec.jsx` | Ignora un cupón que no existe |
+| 10 | `test/utils.spec.jsx` | `crearOrden` guarda los datos del cliente y el total |
 
-> Nota: las pruebas 7–10 manipulan el DOM real (render y clic) en un navegador headless.
+> Nota: las 10 pruebas son de funciones puras; no se monta la app ni se usa el DOM.
 
 ---
 
@@ -143,15 +143,14 @@ Chrome/Edge headless y se limpia `localStorage` antes y después de cada prueba.
 1. **Configuración del entorno:** se instalaron `karma`, `karma-jasmine`, `karma-chrome-launcher`,
    `karma-webpack`, `jasmine-core`, Babel y webpack. `karma.conf.cjs` define el *browser* headless y
    detecta Chrome o Edge según el sistema.
-2. **Escritura de pruebas:** se separaron las funciones puras (`utils`) de los componentes. Cada
-   `describe` agrupa un comportamiento y cada `it` valida un caso concreto.
+2. **Escritura de pruebas:** se probaron las funciones puras de `utils`. Cada `describe` agrupa un
+   comportamiento y cada `it` valida un caso concreto.
 3. **Pruebas simples:** cada `it` valida una sola idea y tiene un nombre descriptivo. No se usan
-   mocks ni espías: se prueban las funciones reales y, en los componentes, se revisa el texto o el
-   clic directamente sobre el DOM.
+   mocks, espías ni renderizado de componentes: se llama a la función real y se revisa el resultado.
 4. **Análisis de resultados:** `npm test` informa las 10 pruebas ejecutadas; la salida queda limpia,
    sin advertencias, y el equipo puede explicar qué valida cada una.
 5. **Cobertura funcional:** precio en CLP, correo, contraseña, cupón, stock, unidades del carrito,
-   render y clic de una tarjeta, sugerencias del buscador y render de la página de inicio.
+   eliminación de productos, cantidad mínima, cupón inválido y creación de una orden.
 
 ---
 

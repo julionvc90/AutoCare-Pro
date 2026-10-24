@@ -67,9 +67,7 @@ La suite vive en la carpeta **`test/`** y se ejecuta con **Karma + Jasmine**:
 
 | Archivo | Qué valida |
 |---|---|
-| `test/utils.spec.jsx` | Precio en CLP, correo, contraseña, cupón, stock y unidades |
-| `test/components.spec.jsx` | `ProductCard` (render y clic) y sugerencias de `SearchBox` |
-| `test/app.spec.jsx` | Que la aplicación muestre la página de inicio |
+| `test/utils.spec.jsx` | Precio, correo, contraseña, cupón, stock, unidades, eliminación, cantidad mínima, cupón inválido y creación de la orden |
 
 Total: **10 pruebas**, todas en verde.
 

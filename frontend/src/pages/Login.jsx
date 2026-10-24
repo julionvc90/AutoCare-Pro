@@ -1,3 +1,4 @@
+// Login: inicio de sesion y registro de usuarios.
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';

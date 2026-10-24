@@ -1,3 +1,4 @@
+// ProductDetail: ficha del producto con cantidad y relacionados.
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CATEGORIES } from '../data/products';

@@ -1,3 +1,4 @@
+// AdminUsers: listado de usuarios y roles.
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';

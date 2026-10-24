@@ -1,3 +1,4 @@
+// AuthContext: sesion, login, registro y usuarios.
 import { createContext, useContext, useMemo, useState } from 'react';
 import { SEED_USERS } from '../data/users';
 import { readJSON, removeKey, writeJSON } from '../utils/storage';

@@ -1,3 +1,4 @@
+// CartContext: estado del carrito, cupon y checkout.
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import {
   CLAVE_CARRITO,

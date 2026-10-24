@@ -1,3 +1,4 @@
+// ReceiptPage: busca una orden y muestra su boleta.
 import { Link, useParams } from 'react-router-dom';
 import Receipt from '../components/Receipt';
 import { readJSON } from '../utils/storage';

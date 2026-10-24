@@ -1,3 +1,4 @@
+// AdminSale: registra una venta y genera la boleta.
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';

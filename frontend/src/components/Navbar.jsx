@@ -1,3 +1,4 @@
+// Navbar: navegacion principal y menu movil.
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 

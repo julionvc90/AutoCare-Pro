@@ -1,3 +1,4 @@
+// ProductsContext: catalogo compartido y operaciones de productos.
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { CATALOG, CATEGORIES, DEFAULT_IMAGE } from '../data/products';
 import { readJSON, writeJSON } from '../utils/storage';

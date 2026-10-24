@@ -1,3 +1,4 @@
+// Blogs: listado de articulos del blog.
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 

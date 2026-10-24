@@ -1,3 +1,4 @@
+// AdminHome: dashboard con KPIs y alertas de stock.
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useProducts } from '../../context/ProductsContext';

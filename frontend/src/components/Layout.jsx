@@ -1,3 +1,4 @@
+// Layout: estructura base de la tienda con barra, navbar, contenido y footer.
 import { Outlet } from 'react-router-dom';
 import TopBar from './TopBar';
 import Navbar from './Navbar';
