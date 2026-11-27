@@ -1,0 +1,71 @@
+/* contact.css — AutoCare Pro (Neo Kinpaku) */
+/* ============================================================
+   CONTACTO
+   ============================================================ */
+.contacto-card {
+  height: 100%;
+  padding: clamp(22px, 3vw, 30px);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+}
+
+.contacto-card h2 {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  margin-bottom: 18px;
+}
+
+.contacto-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--rule);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contacto-item:hover {
+  color: var(--gold);
+}
+
+.contacto-icono {
+  display: none;
+}
+
+.contacto-item strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.contacto-item small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+}
+
+.contacto-resultado {
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.contacto-resultado.exito {
+  color: var(--success);
+}
+
+.contacto-resultado.error {
+  color: var(--vermilion);
+}
+

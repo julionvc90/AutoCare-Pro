@@ -1,0 +1,156 @@
+/* blog.css — AutoCare Pro (Neo Kinpaku) */
+/* ============================================================
+   BLOG
+   ============================================================ */
+.blog-card {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  border-radius: 0;
+  transition: border-color 0.25s var(--ease);
+}
+
+.blog-card:hover {
+  border-color: var(--rule-strong);
+}
+
+.blog-card .card-body {
+  padding: 20px 0 4px;
+}
+
+.blog-etiqueta {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--patina);
+}
+
+.blog-destacado {
+  padding-block: clamp(32px, 5vw, 48px);
+  border-top: 1px solid var(--rule);
+}
+
+.blog-texto h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin-bottom: 14px;
+}
+
+.blog-texto p {
+  max-width: 52ch;
+  color: var(--muted);
+}
+
+.blog-imagen {
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  background: oklch(96% 0.004 95);
+}
+
+.blog-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-imagen-contain img {
+  object-fit: contain;
+  padding: 18px;
+}
+
+.articulo {
+  max-width: 780px;
+}
+
+.articulo h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 100;
+  margin-bottom: 14px;
+}
+
+.articulo-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.articulo-portada {
+  margin-block: 28px;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+  background: oklch(96% 0.004 95);
+}
+
+.articulo-portada img {
+  width: 100%;
+  height: auto;
+}
+
+.articulo-portada-contain img {
+  object-fit: contain;
+  padding: 20px;
+}
+
+.articulo-intro {
+  font-size: 1.12rem;
+  line-height: 1.75;
+  color: var(--champagne);
+}
+
+.articulo h2 {
+  margin-top: clamp(36px, 5vw, 52px);
+  margin-bottom: 14px;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+}
+
+.articulo p,
+.articulo li {
+  max-width: 68ch;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.articulo ul,
+.articulo ol {
+  max-width: 66ch;
+  padding-left: 22px;
+}
+
+.articulo li::marker {
+  color: var(--gold);
+}
+
+.articulo-tabla {
+  margin-block: 28px;
+  border-color: var(--rule);
+}
+
+.articulo-nota {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule-strong);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.articulo-navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+

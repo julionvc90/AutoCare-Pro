@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Depurar app React (Edge · Vite)",
+      "url": "http://127.0.0.1:5173/",
+      "webRoot": "${workspaceFolder}/frontend"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Depurar app React (Chrome · Vite)",
+      "url": "http://127.0.0.1:5173/",
+      "webRoot": "${workspaceFolder}/frontend"
+    }
+  ]
+}
