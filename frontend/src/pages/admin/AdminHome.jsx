@@ -1,17 +1,23 @@
 // AdminHome: dashboard con KPIs y alertas de stock.
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useProducts } from '../../context/ProductsContext';
-import { ORDENES_DEMO, totalOrden } from '../../data/orders';
-import { readJSON } from '../../utils/storage';
+import { totalOrden } from '../../data/orders';
+import { api } from '../../api/client';
 import { formatPrice } from '../../utils/format';
 
 export default function AdminHome() {
   const { user, allUsers, esAdmin } = useAuth();
   const { products } = useProducts();
+  const [ordenes, setOrdenes] = useState([]);
 
-  const ordenesReales = readJSON('ordenes', []);
-  const ordenes = [...ORDENES_DEMO, ...(Array.isArray(ordenesReales) ? ordenesReales : [])];
+  useEffect(() => {
+    api
+      .listarOrdenes()
+      .then((lista) => setOrdenes(Array.isArray(lista) ? lista : []))
+      .catch(() => setOrdenes([]));
+  }, []);
 
   const pendientes = ordenes.filter((o) => o.estado === 'Pendiente').length;
   const ventas = ordenes.filter((o) => o.estado !== 'Cancelada').reduce((suma, o) => suma + totalOrden(o), 0);

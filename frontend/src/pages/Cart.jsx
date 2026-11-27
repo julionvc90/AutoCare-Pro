@@ -37,8 +37,8 @@ export default function CartPage() {
     if (resultado.ok) setCuponTexto('');
   };
 
-  const pagar = () => {
-    const resultado = checkout(user);
+  const pagar = async () => {
+    const resultado = await checkout(user);
     if (resultado.ok) {
       navigate(`/boleta/${resultado.orden.id}`);
       return;

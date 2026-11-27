@@ -5,7 +5,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useProducts } from '../../context/ProductsContext';
 import { CUPONES, calcularResumen, crearOrden } from '../../utils/cart';
 import { formatPrice } from '../../utils/format';
-import { readJSON, writeJSON } from '../../utils/storage';
+import { api } from '../../api/client';
 
 const CLIENTE_INICIAL = { nombre: '', correo: '', rut: '', telefono: '', direccion: '' };
 
@@ -72,7 +72,7 @@ export default function AdminSale() {
     setItems((previos) => previos.filter((item) => item.id !== id));
   };
 
-  const vender = () => {
+  const vender = async () => {
     if (!cliente.nombre.trim()) {
       setError('Ingresa el nombre del cliente.');
       return;
@@ -87,9 +87,12 @@ export default function AdminSale() {
     }
 
     const orden = crearOrden(items, { ...cliente, vendedor: user.nombre }, codigoCupon || null, 'vendedor');
-    const guardadas = readJSON('ordenes', []);
-    writeJSON('ordenes', [...(Array.isArray(guardadas) ? guardadas : []), orden]);
-    navigate(`/boleta/${orden.id}`);
+    try {
+      const guardada = await api.crearOrden(orden);
+      navigate(`/boleta/${guardada.id}`);
+    } catch (err) {
+      setError(err.message || 'No se pudo registrar la venta.');
+    }
   };
 
   return (

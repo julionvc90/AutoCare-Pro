@@ -1,19 +1,24 @@
 // AdminOrders: listado de ordenes con detalle.
-import { useState } from 'react';
-import { COLOR_ESTADO, ORDENES_DEMO, totalOrden } from '../../data/orders';
-import { readJSON } from '../../utils/storage';
+import { useEffect, useState } from 'react';
+import { COLOR_ESTADO, totalOrden } from '../../data/orders';
+import { api } from '../../api/client';
 import { formatPrice } from '../../utils/format';
 import Modal from '../../components/Modal';
 
 const POR_PAGINA = 8;
 
 export default function AdminOrders() {
-  const guardadas = readJSON('ordenes', []);
-  const ordenes = [...ORDENES_DEMO, ...(Array.isArray(guardadas) ? guardadas : [])];
-
+  const [ordenes, setOrdenes] = useState([]);
   const [filtro, setFiltro] = useState('');
   const [pagina, setPagina] = useState(1);
   const [detalle, setDetalle] = useState(null);
+
+  useEffect(() => {
+    api
+      .listarOrdenes()
+      .then((lista) => setOrdenes(Array.isArray(lista) ? lista : []))
+      .catch(() => setOrdenes([]));
+  }, []);
 
   const numeroDe = (orden, indice) => orden.numero || orden.id || `ORD-${1000 + indice + 1}`;
 

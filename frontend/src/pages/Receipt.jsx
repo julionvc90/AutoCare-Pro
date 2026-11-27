@@ -1,12 +1,39 @@
-// ReceiptPage: busca una orden y muestra su boleta.
+// ReceiptPage: busca una orden en el backend y muestra su boleta.
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Receipt from '../components/Receipt';
-import { readJSON } from '../utils/storage';
+import { api } from '../api/client';
 
 export default function ReceiptPage() {
   const { id } = useParams();
-  const ordenes = readJSON('ordenes', []);
-  const orden = (Array.isArray(ordenes) ? ordenes : []).find((item) => item.id === id);
+  const [orden, setOrden] = useState(null);
+  const [cargando, setCargando] = useState(true);
+
+  useEffect(() => {
+    let activo = true;
+    api
+      .obtenerOrden(id)
+      .then((o) => {
+        if (activo) setOrden(o);
+      })
+      .catch(() => {
+        if (activo) setOrden(null);
+      })
+      .finally(() => {
+        if (activo) setCargando(false);
+      });
+    return () => {
+      activo = false;
+    };
+  }, [id]);
+
+  if (cargando) {
+    return (
+      <div className="container mt-5 text-center">
+        <p>Cargando boleta…</p>
+      </div>
+    );
+  }
 
   if (!orden) {
     return (

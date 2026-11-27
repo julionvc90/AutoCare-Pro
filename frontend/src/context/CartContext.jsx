@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import {
   CLAVE_CARRITO,
   CLAVE_CUPON,
-  CLAVE_ORDENES,
   CUPONES,
   agregarItem,
   calcularResumen,
@@ -15,6 +14,7 @@ import {
 } from '../utils/cart';
 import { readJSON, readString, removeKey, writeJSON, writeString } from '../utils/storage';
 import { useProducts } from './ProductsContext';
+import { api } from '../api/client';
 
 const CartContext = createContext(null);
 
@@ -80,7 +80,7 @@ export function CartProvider({ children }) {
     removeKey(CLAVE_CUPON);
   };
 
-  const checkout = (usuario) => {
+  const checkout = async (usuario) => {
     if (!usuario) {
       return { ok: false, message: 'Debes iniciar sesión para pagar.' };
     }
@@ -89,16 +89,16 @@ export function CartProvider({ children }) {
     }
 
     const orden = crearOrden(items, usuario, coupon);
-    const ordenesGuardadas = readJSON(CLAVE_ORDENES, []);
-    const lista = Array.isArray(ordenesGuardadas) ? ordenesGuardadas : [];
-    writeJSON(CLAVE_ORDENES, [...lista, orden]);
 
-    const resumen = calcularResumen(items, coupon);
-    setItems([]);
-    setCoupon(null);
-    removeKey(CLAVE_CUPON);
-
-    return { ok: true, orden, total: resumen.total };
+    try {
+      const guardada = await api.crearOrden(orden);
+      setItems([]);
+      setCoupon(null);
+      removeKey(CLAVE_CUPON);
+      return { ok: true, orden: guardada, total: guardada.total };
+    } catch (error) {
+      return { ok: false, message: error.message || 'No se pudo registrar la orden.' };
+    }
   };
 
   const summary = useMemo(() => calcularResumen(items, coupon), [items, coupon]);

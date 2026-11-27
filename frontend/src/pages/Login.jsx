@@ -12,9 +12,9 @@ export default function Login() {
   const [mensajeLogin, setMensajeLogin] = useState({ texto: '', tipo: '' });
   const [mensajeRegistro, setMensajeRegistro] = useState({ texto: '', tipo: '' });
 
-  const enviarLogin = (evento) => {
+  const enviarLogin = async (evento) => {
     evento.preventDefault();
-    const resultado = login(formLogin.usuario, formLogin.password);
+    const resultado = await login(formLogin.usuario, formLogin.password);
     setMensajeLogin({ texto: resultado.message, tipo: resultado.ok ? 'exito' : 'error' });
 
     if (resultado.ok) {
@@ -23,9 +23,9 @@ export default function Login() {
     }
   };
 
-  const enviarRegistro = (evento) => {
+  const enviarRegistro = async (evento) => {
     evento.preventDefault();
-    const resultado = register(formRegistro);
+    const resultado = await register(formRegistro);
     setMensajeRegistro({ texto: resultado.message, tipo: resultado.ok ? 'exito' : 'error' });
     if (resultado.ok) setFormRegistro({ nombre: '', correo: '', password: '' });
   };
