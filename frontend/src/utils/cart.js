@@ -32,7 +32,7 @@ export function agregarItem(carrito, producto, cantidad = 1, limite) {
 
   const carritoNuevo = existente
     ? carrito.map((i) => (i.nombre === producto.nombre ? { ...i, cantidad: final } : i))
-    : [...carrito, { nombre: producto.nombre, precio: producto.precio, cantidad: final }];
+    : [...carrito, { id: producto.id, nombre: producto.nombre, precio: producto.precio, cantidad: final }];
 
   return { carrito: carritoNuevo, agregadas, limite: tope };
 }
